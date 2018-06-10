@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			body{
+				text-align: center;
+			}
+			canvas{
+				background-color: #269ABC;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas class="mogu" width="400" height="400" ></canvas>
+	<script>
+		var cav=document.getElementsByClassName('mogu').getContext('2d');
+		cav.beginPath();
+		cav.moveTo(150,200);
+		cav.lineTo(100,250);
+		cav.lineTo(200,250);
+		cav.closePath();
+		cav.stroke();
+	</script>
+	</body>
+</html>

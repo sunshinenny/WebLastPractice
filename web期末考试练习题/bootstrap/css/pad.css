@@ -1,0 +1,15 @@
+body {
+  font-family: Arial;
+  background: #fff;
+}
+
+.box {
+  width: 760px;
+  background: #cfc;
+  color: #0a0;
+  border: 1px solid #0a0;
+  padding: 6px;
+}
+.box h1 {
+  font-size: 1.2em;
+}

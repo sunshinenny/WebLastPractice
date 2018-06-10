@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title> new document </title>
+  <meta charset="utf-8">
+	<style>
+		.alert{
+      border:1px solid #a33;
+      color:#922;
+      background:#fee;
+      padding:10px;
+    }
+    .close{
+      float:right; 
+      font-weight:bold; 
+      opacity:.2;
+      cursor:pointer;
+    }
+    .close:hover{opacity:.5}
+    .fade{opacity:1; transition:opacity 2s linear;}
+    .out{opacity:0;}/*结束样式*/
+	</style>
+ </head>
+ <body>
+  <button>显示警告框</button>
+  <div class="alert fade">
+    <span class="close" data-trigger="close">&times;</span>
+    <p>您的浏览器版本太低!请下载最新版本的浏览器</p>
+  </div>
+  <script src="js/jquery-1.11.3.js"></script>
+  <script>
+    //选择data-trigger属性为close的元素绑定单击事件
+    $("[data-trigger='close']").click(function(){
+      //获得当前元素的父元素，为其添加out类
+      $(this).parent().addClass("out");
+    });
+    //选择button元素绑定单击事件
+    $("button").click(function(){
+      $(this).next().toggleClass("out");
+      /*
+        hasClass(out)?removeClass(out):addClass(out)
+      */
+    });
+  </script>
+ </body>
+</html>

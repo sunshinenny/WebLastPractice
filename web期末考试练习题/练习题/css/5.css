@@ -1,0 +1,47 @@
+body {
+  font-family: Arial;
+  background: #fff;
+}
+
+
+/*PC屏幕专用样式*/
+@media screen and (min-width: 992px) {
+  .box {
+    width: 990px;
+    background: #fcc;
+    color: #a00;
+    border: 1px solid #a00;
+    padding: 10px;
+    margin: 0 auto;
+  }
+  .box h1 {
+    font-size: 1.6em;
+  }
+}
+/*PAD屏幕专用样式*/
+@media screen and (min-width: 768px) and (max-width:991px) {
+  .box {
+    width: 760px;
+    background: #cfc;
+    color: #0a0;
+    border: 1px solid #0a0;
+    padding: 5px;
+  }
+  .box h1 {
+    font-size: 1.2em;
+  }
+}
+/*PHONE屏幕专用样式*/
+@media screen and (max-width:767px) {
+  .box {
+    width: 100%;
+    background: #ccf;
+    color: #00a;
+    border: 1px solid #00a;
+    padding: 2px;
+  }
+  .box h1 {
+    font-size: 1em;
+    display: none;
+  }
+}

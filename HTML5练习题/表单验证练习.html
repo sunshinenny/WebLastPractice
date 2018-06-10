@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    .container {
+      width: 550px;
+      margin: 100px auto;
+    }
+    .container > h2 {
+      text-align: center;
+    }
+    .panel {
+      border: 1px solid #aaa;
+      border-radius: 2px;
+      box-shadow: 0 0 5px #aaa;
+      min-height: 100px;
+      padding: 1.2em .6em;
+    }
+    .form-group {
+      margin-bottom: 8px;
+    }
+    .form-group > label {
+      display: inline-block;
+      width: 80px;
+      text-align: right;
+    }
+    .form-group > input {
+      width: 200px;
+      padding: 4px;
+      border-radius: 2px;
+      border: 1px solid #aaa;
+    }
+    .form-group > span {
+      width: 270px;
+      color: #fff;
+      padding: 4px;
+      border-radius: 2px;;
+    }
+    .msg-default {
+      background-color: #999;
+    }
+    .msg-error {
+      background-color: #d00;
+    }
+    .msg-success {
+      background-color: #0d0;
+    }
+    .hidden {
+      display: none;
+    }
+    input[type="submit"] {
+      background: #3e3;
+      border: 1px solid #0a0;
+      width: 210px;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>注册新用户</h2>
+    <div class="panel">
+      <form action="1.php">
+        <div class="form-group">
+          <label for="uname">用户名：</label>
+          <input required minlength="6" maxlength="9" type="text" placeholder="请输入用户名" autofocus name="uname" id="uname"/>
+          <span class="msg-default">用户名长度在6到9位之间</span>
+        </div>
+        <div class="form-group">
+          <label for="upwd">密码：</label>
+          <input type="password" placeholder="请输入密码" name="upwd" id="upwd"/>
+          <span class="msg-default hidden">密码长度在6到12位之间</span>
+        </div>
+        <div class="form-group">
+          <label for="umail">邮箱：</label>
+          <input required type="email" placeholder="请输入邮箱地址" name="umail" id="umail"/>
+          <span class="msg-default hidden">请输入合法的邮箱地址</span>
+        </div>
+        <div class="form-group">
+          <label></label>
+          <input type="submit" value="提交注册信息"/>
+        </div>
+      </form>
+    </div>
+  </div>
+  <script>
+    /*1.对用户名进行验证*/
+    uname.onblur = function(){
+      if(this.validity.valueMissing){
+        this.nextElementSibling.innerHTML = '用户名不能为空';
+        this.nextElementSibling.className = 'msg-error';
+        this.setCustomValidity('用户名不能为空');
+      }else if(this.validity.tooShort){
+        this.nextElementSibling.innerHTML = '用户名不能少于6位';
+        this.nextElementSibling.className = 'msg-error';
+        this.setCustomValidity('用户名不能少于6位');
+      }else {
+        this.nextElementSibling.innerHTML = '用户名格式正确';
+        this.nextElementSibling.className = 'msg-success';
+        this.setCustomValidity('');
+      }
+    }
+    uname.onfocus = function(){
+      this.nextElementSibling.innerHTML = '用户名长度在6到9位之间';
+      this.nextElementSibling.className = 'msg-default';
+    }
+
+    /*3.对邮箱地址进行验证*/
+    umail.onblur = function(){
+      if(this.validity.valueMissing){
+        this.nextElementSibling.innerHTML = '邮箱不能为空';
+        this.nextElementSibling.className = 'msg-error';
+        this.setCustomValidity('邮箱不能为空');
+      }else if(this.validity.typeMismatch){
+        this.nextElementSibling.innerHTML = '邮箱格式不正确';
+        this.nextElementSibling.className = 'msg-error';
+        this.setCustomValidity('邮箱格式不正确');
+      }else {
+        this.nextElementSibling.innerHTML = '邮箱格式正确';
+        this.nextElementSibling.className = 'msg-success';
+        this.setCustomValidity('');
+      }
+    }
+    umail.onfocus = function(){
+      this.nextElementSibling.innerHTML = '请输入合法的邮箱地址';
+      this.nextElementSibling.className = 'msg-default';
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title> new document </title>
+  <meta charset="utf-8">
+	<style>
+		.box {
+			width: 100px;
+			height: 100px;
+			float: left;
+			border: 1px solid #aaa;
+			margin: 10px;
+		}
+	</style>
+ </head>
+ <body>
+  <h1>bind()事件绑定方法的缺陷</h1>
+	<button>添加一个BOX</button>
+  <input type="button" value="添加一个input按钮">
+  <a href="javascript:;">hello</a>
+	<hr>
+
+	<div class="box">DIV1</div>
+	<div class="box">DIV2</div>
+	<div class="box">DIV3</div>
+  <script src="js/jquery-1.11.3.js"></script>
+  <script>
+  /*
+    $(".box").bind("click",function(){
+      alert($(this).html());
+    });
+  */
+    //利用冒泡，为父元素body绑定单击事件，只允许class为box的div元素响应事件
+    $("body").delegate("div.box","click",function(e){
+      var $target=$(e.target);//获得目标元素target
+      alert($target.html());
+    });
+    $("button").bind("click",function(){
+      $("body").append(
+        $('<div class="box">DIV NEW</div>')
+      );
+    });
+    $("input").bind("click",function(){
+      $("body").append(
+        $('<input class="box" type="button" value="new btn">')
+      );
+    })
+
+    $("a").one("click",function(){alert("hello")});
+  </script>
+ </body>
+</html>

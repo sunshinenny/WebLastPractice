@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #box {
+            border: 1px solid #aaa;
+            width: 200px;
+            height: 100px;
+        }
+        input {
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <h3>练习：使用range滑块组件</h3>
+    <div id="box"></div>
+    <p>
+        红色：<input id="red" type="range" min="0" max="255" value="255"/>
+        <span id="redMsg">255</span>
+    </p>
+    <p>
+        绿色：<input id="green" type="range" min="0" max="255" value="255"/>
+        <span id="greenMsg">255</span>
+    </p>
+    <p>
+        蓝色：<input id="blue" type="range" min="0" max="255" value="255"/>
+        <span id="blueMsg">255</span>
+    </p>
+    <script>
+        var list = document.querySelectorAll('[type="range"]');
+        for(var i=0; i<list.length; i++){
+            var range = list[i];
+            range.onchange = function(){
+                this.nextElementSibling.innerHTML = this.value;
+                setBoxBG(); //修改box的背景颜色
+            }
+        }
+        //读取三个滑块的值，构建颜色，设置到#box
+        function setBoxBG(){
+            var r = red.value;
+            var g = green.value;
+            var b = blue.value;
+            var color = `rgb(${r},${g},${b})`;
+            box.style.background = color;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    .container {
+      position: relative;
+      text-align: center;
+      width: 100%;
+      height: 400px;
+    }
+    .btn {
+      width: 100px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-left: -50px;
+      margin-top: -50px;
+    }
+    .btn img {
+      width: 100px;
+    }
+  </style>
+</head>
+<body>
+  <h2>练习：视频播放</h2>
+  <div class="container">
+    <video id="v1" src="resource/birds.mp4"></video>
+    <a id="btn" class="btn" href="#"><img src="img/play.png"></a>
+  </div>
+  <script>
+    //为播放按钮添加单击事件监听
+    btn.onclick = function(){
+      if(v1.paused){
+        v1.play();
+        this.innerHTML = '<img src="img/pause.png">'
+      }else {
+        v1.pause();
+        this.innerHTML = '<img src="img/play.png">'
+      }
+    }
+    //鼠标移出容器时，隐藏播放按钮；移入时显示
+    var container = document.querySelector('.container');
+    //不能使用onmouseover
+    container.onmouseenter = function(){
+      btn.style.display = 'block';
+    }
+    //不能使用onmouseout
+    container.onmouseleave = function(){
+      btn.style.display = 'none';
+    }
+
+  </script>
+</body>
+</html>

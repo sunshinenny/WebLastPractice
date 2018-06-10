@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <!--[if lt IE 9]>
+  <script src="js/html5shiv.min.js"></script>
+  <script src="js/respond.min.js"></script>
+  <![endif]-->
+  <style>
+    div {
+      /*border: 1px solid #000;*/
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>
+        Bootstrap
+        <i>CSS</i>
+        <small>Type</small>
+      </h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3 col-md-offset-9">
+      <input type="text" class="form-control"/>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-2">
+      <ul class="list-unstyled">
+        <li><a href="#">起步</a></li>
+        <li><a href="#">全局样式</a></li>
+        <li><a href="#">组件</a></li>
+        <li><a href="#">JS插件</a></li>
+        <li><a href="#">定制</a></li>
+      </ul>
+    </div>
+    <div class="col-md-7">
+      <blockquote>
+        三人行，必有我师焉。
+        <footer>摘自《论语》</footer>
+      </blockquote>
+      <table class="table table-bordered table-striped">
+        <thead>
+        <tr>
+          <th>编号</th>
+          <th>姓名</th>
+          <th>工资</th>
+          <th>生日</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>1001</td>
+          <td>Tom</td>
+          <td>$5000</td>
+          <td>2001-10-20</td>
+        </tr>
+        <tr>
+          <td>1001</td>
+          <td>Tom</td>
+          <td>$5000</td>
+          <td>2001-10-20</td>
+        </tr>
+        <tr>
+          <td>1001</td>
+          <td>Tom</td>
+          <td>$5000</td>
+          <td>2001-10-20</td>
+        </tr>
+        <tr>
+          <td>1001</td>
+          <td>Tom</td>
+          <td>$5000</td>
+          <td>2001-10-20</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-md-3">
+      <h3>前端大全</h3>
+      <dl>
+        <dt>HTML</dt>
+        <dd>Hyper Text Markup</dd>
+        <dt>JS</dt>
+        <dd>Javascript DOM BOM</dd>
+        <dt>CSS</dt>
+        <dd>Cascade Style Sheet</dd>
+      </dl>
+      <blockquote class="blockquote-reverse">
+        勤能补拙是良训
+        <footer>达内名言</footer>
+      </blockquote>
+    </div>
+  </div>
+</div>
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<script src="js/jquery-1.11.3.js"></script>
+<script src="js/bootstrap.js"></script>
+<script>
+  (function () {
+    var s = document.createElement("script");
+    s.onload = function () {
+      bootlint.showLintReportForCurrentDocument([]);
+    };
+    s.src = "js/bootlint.js";
+    document.body.appendChild(s)
+  })();
+</script>
+</body>
+</html>

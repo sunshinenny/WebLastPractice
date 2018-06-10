@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <!--[if lt IE 9]>
+  <script src="js/html5shiv.min.js"></script>
+  <script src="js/respond.min.js"></script>
+  <![endif]-->
+  <style>
+    div {
+      border: 1px solid #000;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>全局样式——栅格布局系统</h1>
+
+  <h3>一行中放置一列</h3>
+  <div class="row">
+    <div class="col-md-1">MD-1</div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-2">MD-2</div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3">MD-3</div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">MD-4</div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-5">MD-5</div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">MD-6</div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-7">MD-7</div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-8">MD-8</div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-9">MD-9</div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-10">MD-10</div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-11">MD-11</div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">MD-12</div>
+  </div>
+
+  <h3>一行中放置多列</h3>
+  <div class="row">
+    <div class="col-md-1">MD-1</div>
+    <div class="col-md-1">MD-1</div>
+    <div class="col-md-1">MD-1</div>
+    <div class="col-md-1">MD-1</div>
+    <div class="col-md-1">MD-1</div>
+    <div class="col-md-1">MD-1</div>
+    <div class="col-md-1">MD-1</div>
+    <div class="col-md-1">MD-1</div>
+    <div class="col-md-1">MD-1</div>
+    <div class="col-md-1">MD-1</div>
+    <div class="col-md-1">MD-1</div>
+    <div class="col-md-1">MD-1</div>
+
+    <div class="col-md-1">MD-1</div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3">MD-3</div>
+    <div class="col-md-3">MD-3</div>
+    <div class="col-md-3">MD-3</div>
+    <div class="col-md-3">MD-3</div>
+
+    <div class="col-md-3">MD-3</div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+      <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab asperiores, autem ducimus eaque eum ex fugiat ipsa itaque iusto laboriosam modi molestias odio repudiandae totam unde vero, voluptate voluptatibus?</span></p>
+    </div>
+    <div class="col-md-4">
+      <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At magnam quasi similique voluptatum? Aliquam atque corporis doloremque est, facilis itaque pariatur veritatis. At blanditiis cupiditate magni maiores necessitatibus perspiciatis, repellat!</span><span>Adipisci aperiam architecto assumenda cum, ducimus eaque exercitationem facilis labore maxime minima minus necessitatibus nemo odit perspiciatis quo repudiandae soluta suscipit ullam ut veniam. Error iste maxime quasi quos veritatis!</span><span>Accusantium alias, commodi consectetur cumque dolores eos esse eveniet facilis impedit ipsam ipsum itaque nulla obcaecati omnis provident quis saepe! Autem consequuntur cupiditate excepturi laborum nihil numquam officiis possimus. Molestiae?</span></p>
+    </div>
+    <div class="col-md-4">
+      <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aspernatur assumenda atque consectetur corporis culpa error molestiae nostrum perferendis quis temporibus tenetur, veritatis voluptate. Ea expedita nihil quasi repellendus sit?</span><span>Amet, corporis, eum! Aliquam animi at atque aut debitis ea illum in iure laborum, maiores nam necessitatibus nostrum pariatur placeat praesentium qui quia quisquam repudiandae sequi veritatis? Fugit incidunt, nesciunt.</span></p>
+    </div>
+  </div>
+
+  <!--1:4:1的三列-->
+  <div class="row">
+    <div class="col-md-2">MD-2</div>
+    <div class="col-md-8">MD-8</div>
+    <div class="col-md-2">MD-2</div>
+  </div>
+
+  <!--1:2:1的三列-->
+  <div class="row">
+    <div class="col-md-3 col-xs-4">MD-3</div>
+    <div class="col-md-6 col-xs-4">MD-6</div>
+    <div class="col-md-3 col-xs-4">MD-3</div>
+  </div>
+
+  <!--1:3:1的三列?-->
+  <div class="row">
+  </div>
+</div>
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<script src="js/jquery-1.11.3.js"></script>
+<script src="js/bootstrap.js"></script>
+<script>
+  (function () {
+    var s = document.createElement("script");
+    s.onload = function () {
+      bootlint.showLintReportForCurrentDocument([]);
+    };
+    s.src = "js/bootlint.js";
+    document.body.appendChild(s)
+  })();
+</script>
+</body>
+</html>

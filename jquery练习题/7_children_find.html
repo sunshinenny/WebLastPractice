@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+  <title>...</title>
+  <script>
+  </script>
+ </head>
+  
+ <body>
+  <ul class="top" style="cursor:pointer">
+    <li class="parent1">parent1
+      <ul>
+        <li class="child1">parent1的child1</li>
+        <li class="child2">parent1的child2</li>
+        <li class="child3">parent1的child3</li>
+      </ul>
+    </li>
+    <li class="parent2">parent2
+      <ul>
+        <li class="child1">parent2的child1</li>
+        <li class="child2">parent2的child2</li>
+        <li class="child3">parent2的child3</li>
+      </ul>
+    </li>
+  </ul>
+  <script src="js/jquery-1.11.3.js"></script>
+  <script>
+  /*
+    //选择class为top的ul元素绑定单击事件
+    $("ul.top").click(function(){
+      //查找当前ul下的所有直接子元素，修改其边框为1px solid red
+      $(this).children()
+             .css("border","1px solid red");
+      //查找当前ul下的子ul下的所有li元素, 修改其背景为#faa
+      $(this).find("ul>li")
+             .css("background","#faa");
+    })
+  */
+    //为所有class以child开头的li绑定单击事件
+    $("li[class^=child]").click(function(){
+      //将当前元素的下一个兄弟元素设置背景为#fdd
+      //$(this).next().css("background","#fdd");
+      //            前一个
+      //$(this).prev().css("background","#fdd");
+      //如果当前元素的前一个兄弟，刚好class也是child1,才修改其背景为fdd
+      $(this).prev(".child1")
+             .css("background","#fdd");
+    })
+  </script>
+ </body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <!--[if lt IE 9]>
+  <script src="js/html5shiv.min.js"></script>
+  <script src="js/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<div class="container">
+  <h1>Boostrap插件——模态框</h1>
+  <a data-toggle="modal" href="#modal-login">登录</a>
+  <button data-toggle="modal" data-target="#modal-register" type="button">注册</button>
+
+</div>
+
+<!--模态框都是固定定位的-->
+<div id="modal-login" class="modal">  <!--半透明遮罩-->
+  <div class="modal-dialog"> <!--尺寸位置-->
+    <div class="modal-content"> <!--背景边框倒角阴影-->
+      <div class="modal-header">
+        <span data-dismiss="modal" class="close">&times;</span>
+
+        <h3 class="modal-title">用户登录</h3>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="uname">用户名：</label>
+            <input id="uname" class="form-control"/>
+          </div>
+          <div class="form-group">
+            <label for="upwd">密码：</label>
+            <input id="upwd" class="form-control"/>
+          </div>
+          <input class="btn btn-success" type="button" value="提交"/>
+          <input class="btn btn-danger" type="button" value="取消"/>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <input class="btn btn-success" type="button" value="提交"/>
+        <input data-dismiss="modal" class="btn btn-danger" type="button" value="取消"/>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--模态框都是固定定位的-->
+<div id="modal-register" class="modal fade">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header"></div>
+      <div class="modal-body"></div>
+      <div class="modal-footer"></div>
+    </div>
+  </div>
+</div>
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<script src="js/jquery-1.11.3.js"></script>
+<script src="js/bootstrap.js"></script>
+<script>
+  //$('a[data-toggle="modal"]').click();
+  //$('#modal-login').modal({show:true});
+</script>
+<script>
+  (function () {
+    var s = document.createElement("script");
+    s.onload = function () {
+      bootlint.showLintReportForCurrentDocument([]);
+    };
+    s.src = "js/bootlint.js";
+    document.body.appendChild(s)
+  })();
+</script>
+</body>
+</html>

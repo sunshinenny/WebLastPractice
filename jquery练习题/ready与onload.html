@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title> new document </title>
+  <meta charset="utf-8">
+ </head>
+ <body>
+  <h1>页面加载完成事件</h1>
+  <img src="img/1.jpg"  />
+	<script>
+		console.time("docReady");
+		console.time("winLoad");
+	</script>
+	<script src="js/jquery-1.11.3.js"></script>
+	<script>
+		window.onload=function(){
+			console.log("window.onload....");
+			console.timeEnd("winLoad");
+		}
+		//$(document).ready(function(){})
+		$(function(){
+			console.log("document.ready....");
+			console.timeEnd("docReady");
+		});
+		//script放在body的结尾，就可以实现DOM加载后立刻执行
+	</script>
+ </body>
+</html>

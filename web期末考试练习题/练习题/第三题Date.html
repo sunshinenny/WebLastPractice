@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+
+<body>
+<label>Please choose a date</label><br>
+<input type="date" name="date"/>
+<br/>
+<label name="year">Year</label>
+<label name="month">Month</label>
+<label name="day">Day</label>
+<p name="a">a</p>
+<script>
+    $(document).ready(function () {
+        $("#a").hide();
+        $("#date").onClick(function () {
+            var date = $(this).val();
+            alert(date);
+        })
+        $("#year").onClick(function () {
+            alert("hello");
+        })
+    })
+</script>
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <!--[if lt IE 9]>
+  <script src="js/html5shiv.min.js"></script>
+  <script src="js/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<div class="container">
+  <h1>组件——导航</h1>
+
+  <h3>标签页式导航</h3>
+  <ul class="nav nav-tabs">
+    <li><a data-toggle="tab" href="#tc10">十元套餐</a></li>
+    <li class="active"><a data-toggle="tab" href="#tc20">二十元套餐</a></li>
+    <li><a data-toggle="tab" href="#tc30">三十元套餐</a></li>
+  </ul>
+
+  <div class="tab-content">
+    <div class="tab-pane" id="tc10">十元套餐详情： lorem</div>
+    <div class="tab-pane active" id="tc20">二十元套餐详情： lorem</div>
+    <div class="tab-pane" id="tc30">三十元套餐详情： lorem</div>
+  </div>
+
+  <h3>胶囊式导航</h3>
+  <ul class="nav nav-pills">
+    <li><a data-toggle="tab" href="#tc100">十元套餐</a></li>
+    <li class="active"><a data-toggle="tab" href="#tc200">二十元套餐</a></li>
+    <li><a data-toggle="tab" href="#tc300">三十元套餐</a></li>
+  </ul>
+
+  <div class="tab-content">
+    <div class="tab-pane" id="tc100">十元套餐详情： lorem</div>
+    <div class="tab-pane active" id="tc200">二十元套餐详情： lorem</div>
+    <div class="tab-pane" id="tc300">三十元套餐详情： lorem</div>
+  </div>
+
+
+  <h3>两端调整对齐的胶囊式导航</h3>
+  <ul class="nav nav-pills nav-justified">
+    <li><a data-toggle="tab" href="#tc1000">十元套餐</a></li>
+    <li class="active"><a data-toggle="tab" href="#tc2000">二十元套餐</a></li>
+    <li><a data-toggle="tab" href="#tc3000">三十元套餐</a></li>
+  </ul>
+
+  <div class="tab-content">
+    <div class="tab-pane" id="tc1000">十元套餐详情： lorem</div>
+    <div class="tab-pane active" id="tc2000">二十元套餐详情： lorem</div>
+    <div class="tab-pane" id="tc3000">三十元套餐详情： lorem</div>
+  </div>
+
+
+  <h3>竖直放置的的胶囊式导航</h3>
+  <ul class="nav nav-pills nav-stacked">
+    <li><a data-toggle="tab" href="#tc1000">十元套餐</a></li>
+    <li class="active"><a data-toggle="tab" href="#tc2000">二十元套餐</a></li>
+    <li><a data-toggle="tab" href="#tc3000">三十元套餐</a></li>
+  </ul>
+</div>
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<script src="js/jquery-1.11.3.js"></script>
+<script src="js/bootstrap.js"></script>
+<script>
+  (function () {
+    var s = document.createElement("script");
+    s.onload = function () {
+      bootlint.showLintReportForCurrentDocument([]);
+    };
+    s.src = "js/bootlint.js";
+    document.body.appendChild(s)
+  })();
+</script>
+</body>
+</html>

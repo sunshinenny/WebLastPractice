@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title> new document </title>
+  <meta charset="utf-8">
+ </head>
+ <body>
+	<h1>事件绑定</h1>
+	<button id="btn1">弹出Hello</button>
+  <button id="btn2">移除btn1的click</button>
+  <script src="js/jquery-1.11.3.js"></script>
+  <script>
+    //定义函数sayHello: 弹出提示:Hello
+    function sayHello(){alert("Hello");}
+    //定义函数sayWorld: 弹出提示:World
+    function sayWorld(){alert("World");}
+    //为id为btn1的按钮绑定单击事件处理函数为sayHello
+    //再绑定单击事件处理函数为sayWorld
+    $("#btn1").bind("click",sayHello)
+              .bind("click",sayWorld);
+    //为id为btn2的按钮绑定单击事件处理函数为匿名函数
+    $("#btn2").bind("click",function(){
+      //移除id为btn1上click事件的所有处理函数
+      $("#btn1").unbind("click");
+      //仅移除id为btn1上click事件的sayHello函数
+      //$("#btn1").unbind("click",sayHello);
+      
+    });
+  </script>
+ </body>
+</html>

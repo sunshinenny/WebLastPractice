@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <!--[if lt IE 9]>
+  <script src="js/html5shiv.min.js"></script>
+  <script src="js/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<div class="container">
+  <h1>JS插件——折叠效果</h1>
+  <button data-toggle="collapse" data-target="#box" class="btn btn-danger" type="button">收起/展开盒子</button>
+  <a data-toggle="collapse" href="#box" class="btn btn-success">收起/展开盒子</a>
+
+  <hr/>
+
+  <div id="box" class="collapse in">
+    <!--<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque aut blanditiis cupiditate delectus, dolor ducimus ea eaque eos eum facilis, in itaque nesciunt porro quam, repudiandae sit soluta unde veritatis.</span><span>Corporis cupiditate deleniti eveniet ipsam veritatis. Ab, alias aliquid architecto atque consectetur consequatur debitis delectus doloribus enim et expedita fugit molestiae officiis omnis, porro quaerat quia sed totam veritatis voluptatum.</span><span>Ad aliquid aspernatur beatae, cupiditate deleniti doloribus dolorum exercitationem facilis in incidunt minus, nam, nisi nobis omnis optio quos repellendus sapiente sint vero voluptatum? Ad eius neque quaerat velit veritatis.</span><span>Ad alias aliquam aperiam assumenda aut consequatur culpa debitis esse ex, facere illo impedit in iure laborum nobis nostrum perspiciatis possimus quo reiciendis suscipit unde veritatis vero vitae. Ipsam, ipsum.</span><span>Eius, laboriosam qui. Assumenda delectus ea error fuga laborum laudantium minima saepe! Consequuntur eveniet harum id ipsum molestias numquam officiis, similique! Ab at autem deserunt dolorum minus nobis provident rem.</span>-->
+    <p class="well"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad cumque eaque eius esse, eum excepturi id incidunt inventore iste, minus natus, non praesentium quae sint soluta tempore unde vel voluptatum.</span><span>Ab culpa cupiditate, facilis fuga illum incidunt magnam odit porro quam quasi qui repellat repudiandae suscipit ut voluptatibus. Accusantium alias dignissimos dolorem impedit inventore magni nobis sit, unde vel voluptate?</span><span>Dolore sed vero voluptatem! Autem expedita fuga fugiat nobis placeat quasi quia quibusdam quis sint voluptatibus! A aspernatur dignissimos eligendi eum fugit iure minus repudiandae sit sunt voluptates. Perferendis, porro?</span><span>Ab aperiam aspernatur doloremque dolorum, eaque et excepturi exercitationem inventore, mollitia non obcaecati officiis quod reiciendis rerum soluta, ut vero voluptates. Assumenda autem consectetur eum hic iusto nihil quae tempora!</span><span>Ab alias aspernatur autem consectetur cupiditate dolor dolores ducimus ea earum eius eum facilis iste iure magni molestias necessitatibus nihil numquam officiis porro provident quidem rerum tempore, ullam vel voluptates?</span><span>Ad aliquam culpa dicta dolores eveniet, ipsum iusto nemo officia, placeat quidem rerum sequi ut veritatis. Aliquam aspernatur dolor soluta veritatis! Aliquam deserunt esse eum id, neque officiis praesentium quam.</span></p>
+  </div>
+
+</div>
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<script src="js/jquery-1.11.3.js"></script>
+<script src="js/bootstrap.js"></script>
+<script>
+  (function () {
+    var s = document.createElement("script");
+    s.onload = function () {
+      bootlint.showLintReportForCurrentDocument([]);
+    };
+    s.src = "js/bootlint.js";
+    document.body.appendChild(s)
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title> new document </title>
+  <meta charset="utf-8">
+ </head>
+ <body>
+	<h1>操作元素的内容和值</h1>
+  <form>
+    用户名: <input name="uname">
+            <span id="uname-msg"></span><br>
+    密码:<input type="password" name="upwd">
+            <span id="upwd-msg"></span><br>
+    <input type="button" value="提交注册信息">
+  </form>
+  <script src="js/jquery-1.11.3.js"></script>
+  <script>
+    //为form下的button按钮绑定click事件:
+    $("form :button").click(function(){
+      //选择form下name为uname的元素保存在$uname中
+      var $uname=$("form [name='uname']");
+      //如果$uname的内容的长度<3或>9
+      if($uname.val().length<3
+          ||$uname.val().length>9){
+        //设置id为uname-msg的元素的内容为
+        $("#uname-msg").html(
+          "<img src='img/err.png'>用户名长度必须介于3~9位之间"
+        );
+      }else{//否则
+        //设置id为uname-msg的元素的内容为
+        $("#uname-msg").html(
+          "<img src='img/ok.png'>"
+        );
+        //选择form下name为upwd的元素保存在$upwd中
+        var $upwd=$("form [name='upwd']");
+        //如果$upwd的内容的长度<6或>8
+        if($upwd.val().length<6
+            ||$upwd.val().length>8){
+          //设置id为upwd-msg的元素的内容为
+          $("#upwd-msg").html(
+            "<img src='img/err.png'>密码长度必须介于6~8位之间"
+          );
+        }else{//否则
+          //设置id为upwd-msg的元素的内容为
+          $("#upwd-msg").html(
+            "<img src='img/ok.png'>"
+          );
+        }
+      }
+    })
+  </script>
+ </body>
+</html>

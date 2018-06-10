@@ -1,0 +1,111 @@
+/*仿写Boostrap的样式*/
+* {
+  box-sizing: border-box;
+}
+body {
+  font-size: 14px;
+  line-height: 1.42857;
+  margin: 0;
+  background: #fff;
+  color: #333;
+}
+a {
+  text-decoration: none;
+}
+.navbar {
+  min-height: 50px;
+  background: #222;
+  border-bottom: 1px solid #111;
+}
+.brand {
+  font-size: 2em;
+  font-weight: bold;
+  color: #f5f5f5;
+  line-height: 50px;
+}
+.pull-left {
+  float: left !important;
+}
+.pull-right {
+  float: right !important;
+}
+.nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav li {
+  display: inline-block;
+  line-height: 50px;
+}
+.nav li a {
+  color: #f5f5f5;
+}
+
+.container {
+  padding: 0 15px;
+  margin: 0 auto;
+}
+.container:before {
+  content: ' ';
+  display: table;   /*防止第一个子元素margin-top越界*/
+}
+.container:after {
+  content: ' ';
+  display: table;/*防止最后个子元素margin-bottom越界*/
+  clear: both; /*清除子元素浮动的影响*/
+}
+.my-img {
+  padding: 20px 15px;
+}
+/*超大PC屏幕下的专用样式*/
+@media screen and (min-width: 1200px){
+  .container {
+    width: 1170px;
+  }
+  .my-img {
+    width: 25%;
+  }
+}
+/*中等PC屏幕下的专用样式*/
+@media screen and (min-width: 992px) and (max-width: 1199px){
+  .container {
+    width: 970px;
+  }
+  .my-img {
+    width: 25%;
+  }
+}
+/*PAD屏幕下的专用样式*/
+@media screen and (min-width: 768px) and (max-width: 991px){
+  .container {
+    width: 750px;
+  }
+  .my-img {
+    width: 50%;
+  }
+}
+/*PHONE屏幕下的专用样式*/
+@media screen and (max-width: 767px){
+  .container {
+    width: 100%;
+  }
+  .my-img {
+    width: 100%;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+.btn {
+  background: #555;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 4px;
+  outline: none;
+}
+.btn-primary {
+  background: #337ab7;
+  border: 1px solid #2269a6;
+}

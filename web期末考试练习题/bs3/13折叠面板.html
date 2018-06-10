@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <!--[if lt IE 9]>
+  <script src="js/html5shiv.min.js"></script>
+  <script src="js/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<div class="container">
+  <h1>手风琴 = 面板组 + 折叠效果插件</h1>
+
+  <div class="panel-group">
+    <div class="panel panel-danger">
+      <div class="panel-heading">
+        <a data-toggle="collapse" href="#xyj" class="panel-title">西游记简介</a>
+      </div>
+      <div id="xyj" class="collapse in panel-collapse">
+        <div class="panel-body">
+          <p>西游记详情 lorem*3</p>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <a data-toggle="collapse" href="#sgz" class="panel-title">三国志简介</a>
+      </div>
+      <div id="sgz" class="collapse panel-collapse">
+        <div class="panel-body">
+          <p>三国志详情 lorem*3</p>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-success">
+      <div class="panel-heading">
+        <a data-toggle="collapse" href="#shz" class="panel-title">水浒传简介</a>
+      </div>
+      <div id="shz" class="collapse panel-collapse">
+        <div class="panel-body">
+          <p>水浒传详情 lorem*3</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<script src="js/jquery-1.11.3.js"></script>
+<script src="js/bootstrap.js"></script>
+<script>
+  (function () {
+    var s = document.createElement("script");
+    s.onload = function () {
+      bootlint.showLintReportForCurrentDocument([]);
+    };
+    s.src = "js/bootlint.js";
+    document.body.appendChild(s)
+  })();
+</script>
+</body>
+</html>

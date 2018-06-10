@@ -1,0 +1,11 @@
+li{
+	list-style:none;
+}
+li span{
+	padding-left: 20px;
+	cursor: pointer;
+}
+.open{ background: url("../img/minus.png") no-repeat center left; }
+.closed{ background: url("../img/add.png") no-repeat center left; }
+.show{ display: block; }
+.hide{ display: none; }

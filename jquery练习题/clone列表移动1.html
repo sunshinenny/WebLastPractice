@@ -1,0 +1,43 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<title>读取并修改元素的内容</title>
+<meta charset="utf-8" />
+<style>
+  select { width: 120px; height: 160px}
+</style>
+</head>
+<body>
+	<select id="unsel" size="10">
+    <option value="Arg">Argentina</option>
+    <option value="Bra">Brazil</option>
+    <option value="Can">Canada</option>
+    <option value="Chi">China</option>
+    <option value="Cub">Cuba</option>
+    <option value="Den">Denmark</option>
+    <option value="Egy">Egypt</option>
+    <option value="Fra">France</option>
+    <option value="Gre">Greece</option>
+    <option value="Spa">Spain</option>
+  </select>
+	<select id="sel" size="10">
+	</select>
+  <script src="js/jquery-1.11.3.js"></script>
+  <script>
+    //为所有option元素绑定双击事件
+    $("option").dblclick(function(){
+      //如果当前opt的父元素是unsel
+      if($(this).parent().attr("id")=="unsel"){
+        //如果sel中不包含和当前opt相同的opt
+        if($("#sel>option[value='"
+            +$(this).val()+"']").length==0){
+          //将当前opt克隆一份，追加到id为sel的元素下
+          $("#sel").append($(this).clone(true));
+        }
+      }else{//否则
+        $(this).remove();//将当前opt删除
+      }
+    });
+  </script>
+</body>
+</html>

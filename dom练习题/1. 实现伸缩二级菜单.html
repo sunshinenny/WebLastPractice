@@ -1,0 +1,67 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<title>1. 实现伸缩二级菜单</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="css/1.css" />
+<script type="text/javascript">
+	function toggle(str){
+//			展开二级菜单的代码		
+		var getStatus=document.getElementById(str);//寻找到元素位置
+		var dis_v=getStatus.style.display;
+		if(dis_v=="block")
+			getStatus.style.display="none";
+		else
+			getStatus.style.display="block";
+
+	}
+	
+	function t(str){			
+//修改图标的代码
+		var getPic=document.getElementById(str);
+		if(getPic.getAttributeNode('class').value=='closed'){
+					var attr=document.createAttribute("class");
+					attr.nodeValue='open';
+		}
+		else{
+			var attr=document.createAttribute("class");
+			attr.nodeValue='closed';
+		}
+
+		getPic.setAttributeNode(attr);
+	}
+	
+	
+</script>
+
+</head>
+<body>
+	<ul class="tree" id="tree">
+		<li>
+			<span class="closed" onclick="toggle('1'),t('9')" id="9">考勤管理</span>
+			<ul class="hide" id="1">
+				<li>日常考勤</li>
+				<li>请假申请</li>
+				<li>加班/出差</li>
+			</ul>
+		</li>
+		<li><span class="closed" onclick="toggle('2'),t('8')" id="8">信息中心</span>
+			<ul class="hide" id="2">
+				<li>通知公告</li>
+				<li>公司新闻</li>
+				<li>规章制度</li>
+			</ul>
+		</li>
+		<li><span class="closed" onclick="toggle('3'),t('7')" id="7" >协同办公</span>
+			<ul class="hide" id="3">
+				<li>公文流转</li>
+				<li>文件中心</li>
+				<li>内部邮件</li>
+				<li>即时通信</li>
+				<li>短信提醒</li>
+			</ul>
+		</li>
+	</ul>
+	
+</body>
+</html>

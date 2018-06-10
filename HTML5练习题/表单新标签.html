@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+<h3>新的表单元素</h3>
+
+<form action="">
+  <!--(1)datalist-->
+  <datalist id="dish">
+    <option>京酱肉丝</option>
+    <option>鱼香肉丝</option>
+    <option>青椒肉丝</option>
+    <option>番茄肉丝</option>
+  </datalist>
+  外卖订单：<input list="dish"><br>
+
+  <!--(2)progress-->
+  下载进度：<progress id="p1"></progress><br>
+  下载进度：<progress id="p2" value="0.3"></progress><br>
+  下载进度：<progress id="p3" value="0"></progress><br>
+
+  <!--(3)meter-->
+  <!--最优值在上下限之间 黄 - 绿 - 黄-->
+  机油含量：<meter id="m1" min="0" low="30" value="0" high="70" optimum="50" max="100"></meter><br>
+
+  <!--最优值小于下限  绿 - 黄 - 红-->
+  PM2.5量：<meter id="m2" min="0" low="100" value="0" high="300" optimum="50" max="500"></meter><br>
+
+  <!--最优值大于上限 红 - 黄 - 绿-->
+  到手工资：<meter id="m3" min="0" low="10000" value="0" high="50000" optimum="80000" max="100000"></meter><br>
+
+  <!--(4)output-->
+  商品单价：<input id="price" value="3.5" readonly>
+  购买数量：<input id="count" onchange="total.innerHTML = price.value*count.value;" type="number" value="1">
+  小计：<output id="total" for="price count"></output><br>
+
+  <input type="submit"/>
+</form>
+
+<script>
+  var timer = setInterval(function(){
+    var v = p3.value;
+    v += 0.05;
+    p3.value = v;
+    if(v>=1){
+      clearInterval(timer);
+    }
+  },100)
+
+  var timer2 = setInterval(function(){
+    var v = m1.value;
+    v += 3;
+    m1.value = v;
+    if(v>=m1.max){
+      clearInterval(timer2);
+    }
+  },100)
+
+  var timer3 = setInterval(function(){
+    var v = m2.value;
+    v += 10;
+    m2.value = v;
+    if(v>=m2.max){
+      clearInterval(timer3);
+    }
+  },100)
+
+  var timer4 = setInterval(function(){
+    var v = m3.value;
+    v += 500;
+    m3.value = v;
+    if(v>=m3.max){
+      clearInterval(timer4);
+    }
+  },100)
+</script>
+
+</body>
+</html>

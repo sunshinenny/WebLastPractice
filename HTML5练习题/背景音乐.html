@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+  <h2>练习：播放背景音乐</h2>
+
+  <!--看不见的背景音乐-->
+  <audio src="resource/bg.mp3" id="bgMusic">
+    您的浏览器不支持AUDIO标签！
+  </audio>
+
+  <input type="checkbox" id="bgControl">
+  <span>播放背景音乐</span>
+
+  <script>
+    bgControl.onchange = function(){
+      console.log(this.checked);
+      if(this.checked){
+        bgMusic.play();
+      }else {
+        bgMusic.pause();
+      }
+    }
+  </script>
+</body>
+</html>

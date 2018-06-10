@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title> new document </title>
+  <meta charset="utf-8">
+	<style>
+		.container {
+			border: 1px solid #aaa;
+      overflow:hidden;
+		}
+		.block {
+			float: left;
+			margin: 10px;
+			border: 1px solid #aaa;
+			width: 150px;
+			height: 150px;
+		}
+		.close {
+			float: right;
+			font-weight: bold;
+			opacity: .2;
+			cursor: pointer;
+		}
+		.close:hover {
+			opacity: .5;
+		}
+	</style>
+ </head>
+ <body>
+  <h1>添加/删除节点</h1>
+	<button id="add-block">添加区块</button>
+	
+	<div class="container">
+	</div>
+
+	<script src="js/jquery-1.11.3.js"></script>
+  <script>
+    //为id为"add-block"的按钮绑定单击事件
+    $("#add-block").click(function(){
+      //获得当前按钮的下一个兄弟div，保存在$div中
+      var $div=$(this).next();
+      //将以下html代码段放入$函数中，创建新元素对象，保存在$block中
+      var $block=$('<div class="block"><span class="close">&times;</span></div>');
+      //在0~255之间生成一个随机整数r
+      var r=Math.floor(Math.random()*256);
+      //在0~255之间生成一个随机整数g
+      var g=Math.floor(Math.random()*256);
+      //在0~255之间生成一个随机整数b
+      var b=Math.floor(Math.random()*256);
+      //拼接字符串: rgb(r,g,b),保存在变量bg中
+      var bg="rgb("+r+","+g+","+b+")";
+      //设置$block的背景色为bg
+      $block.css("background",bg);
+      //在$block下查找class为close的直接子元素，为其绑定单击事件: 获取当前x的父元素，移除
+      $block.children(".close").click(function(){
+        $(this).parent().remove();
+      });
+      $div.append($block);//将$block追加到$div结尾
+      //(将$block插入到$div开头)prepend
+    })
+  </script>
+ </body>
+</html>

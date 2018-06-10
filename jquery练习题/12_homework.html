@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title> new document </title>
+  <meta charset="utf-8">
+	<style>
+    a { text-decoration: none;  color: #000;  line-height: 2em; }
+    ul { list-style:none;  padding: 0 0 0 20px; }
+    .affix { float: left;  border: 1px solid #aaa;  width: 150px; }
+    .affix  .active  a{ color: #e4393c;  font-weight: bold; }
+    .container { float: left;  width: 550px;  min-height: 400px;  border: 1px solid #aaa; }
+    .container .box { display: none;  min-height: 300px;  }
+    .container .box.active { display: block; }
+	</style>
+ </head>
+ <body>
+  <h1>练习：查找元素&操作元素</h1>
+	<h3>使用附加导航(affix)实现内容切换</h3>
+
+	<div class="affix">
+		<ul>
+			<li><a data-toggle="item" href="#my-order">我的订单</a></li>
+			<li class="active"><a data-toggle="item" href="#user-setting">用户设置</a></li>
+			<li><a data-toggle="item" href="#account-security">账户安全</a></li>
+		</ul>
+	</div>
+
+	<div class="container">
+		<div id="my-order" class="box" style="background:#fee">我的订单的详细内容</div>
+		<div id="user-setting" class="box active" style="background:#efe">用户设置的详细内容</div>
+		<div id="account-security" class="box" style="background:#eef">账户安全的详细内容</div>
+	</div>
+  <script src="js/jquery-1.11.3.js"></script>
+  <script>
+    //让所有data-toggle为item的元素都能响应单击事件
+    //$("div.affix>ul").delegate(
+     // "[data-toggle='item']","click",function(e){
+   $("div.affix>ul").on(
+      "click","[data-toggle='item']",function(e){
+      //获得目标元素封装为jQuery对象
+      var $target=$(e.target);
+      //如果当前a的父元素不是active的
+      if(!$target.parent().hasClass("active")){
+        //获得当前a的父元素的所有兄弟中class为active的，移除其active类
+        $target.parent()
+               .siblings(".active")
+               .removeClass("active");
+        //为当前a的父元素添加active类
+        $target.parent().addClass("active");
+        //获得当前a的href属性,保存在变量selector中
+        //使用selector查找div，为其添加active类，再查找其所有兄弟中class为active的移除active类
+        $($target.attr("href"))
+          .addClass("active")
+          .siblings(".active")
+          .removeClass("active");
+      }
+    });
+  </script>
+ </body>
+</html>

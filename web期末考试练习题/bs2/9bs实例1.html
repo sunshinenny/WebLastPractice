@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <!--[if lt IE 9]>
+  <script src="js/html5shiv.min.js"></script>
+  <script src="js/respond.min.js"></script>
+  <![endif]-->
+  <style>
+    div {
+      border: 1px solid #000;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <!--行：页头-->
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <ul class="list-inline">
+        <li><a href="#">首页</a></li>
+        <li><a href="#">新闻</a></li>
+        <li><a href="#">产品大全</a></li>
+      </ul>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-4 col-md-offset-4">
+      <input type="text" class="form-control"/>
+    </div>
+  </div>
+
+  <!--行：主体-->
+  <div class="row">
+    <div class="col-xs-12 col-sm-4 col-md-3">
+      <ul class="list-unstyled">
+        <li><a href="#">豆蔻年华</a></li>
+        <li><a href="#">火热青春</a></li>
+        <li><a href="#">流金岁月</a></li>
+        <li><a href="#">迟暮之年</a></li>
+      </ul>
+    </div>
+    <div class="col-xs-12 col-sm-8 col-md-6">
+      <!--栅格系统的嵌套-->
+      <div class="row">
+        <div class="col-xs-6 col-sm-3">
+          <img class="img-responsive" src="img/1.jpg">
+        </div>
+        <div class="col-xs-6 col-sm-3">
+          <img class="img-responsive" src="img/2.jpg">
+        </div>
+        <div class="col-xs-6 col-sm-3">
+          <img class="img-responsive" src="img/3.jpg">
+        </div>
+        <div class="col-xs-6 col-sm-3">
+          <img class="img-responsive" src="img/4.jpg">
+        </div>
+      </div>
+      <p class="text-justify"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam beatae commodi consectetur cumque illum itaque minima nemo nisi nostrum optio pariatur perferendis reprehenderit sed temporibus, ullam ut velit vero voluptate?</span><span>Aperiam blanditiis cupiditate dolores fugiat iure libero nostrum, porro quis repudiandae temporibus! A accusamus, assumenda beatae blanditiis, consequuntur, debitis dolorum eligendi expedita magni maiores non nostrum omnis possimus similique suscipit?</span><span>Aliquid animi architecto asperiores, culpa deserunt distinctio esse, et id ipsum maiores mollitia nemo nisi obcaecati officiis placeat provident quaerat quasi quidem quos repellat saepe similique tenetur totam velit voluptas!</span><span>A ab amet at blanditiis consequatur esse facere hic illo, incidunt modi nostrum similique sunt voluptatem. Architecto debitis ea eligendi illo officiis? Accusamus cupiditate ea est eum maxime nihil obcaecati.</span><span>Ad aut debitis, distinctio ducimus enim est id in labore minima mollitia natus obcaecati porro quas, quasi, quia quod reprehenderit sit totam vel velit. Aperiam debitis earum incidunt porro repellendus.</span><span>Ab assumenda aut blanditiis distinctio error, illo in ipsum minima natus nemo odio optio possimus, quia saepe sapiente sed vero. Ad aspernatur dignissimos esse maiores numquam quis repellat soluta temporibus!</span><span>Adipisci atque autem delectus dolore dolorem dolores dolorum, eaque harum minima, nesciunt, nostrum praesentium quaerat quas quibusdam quo reiciendis veniam veritatis! Assumenda debitis doloremque illum laborum nisi placeat quis recusandae.</span><span>Adipisci aperiam asperiores at aut blanditiis commodi, cum dolor dolores ea, eum incidunt itaque iure maiores molestiae nam nisi numquam odio possimus quod recusandae repellendus repudiandae sapiente, ut veritatis voluptatem.</span></p>
+    </div>
+    <div class="hidden-xs hidden-sm col-md-3">
+      <p class="text-justify"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur consectetur dolorem eos est facilis laborum libero molestiae natus reiciendis voluptatum. Deleniti iste magnam maxime nihil quaerat ratione saepe. Nam, sit?</span><span>Aliquid autem commodi, dolor dolores eius enim est illo labore laboriosam laborum minima mollitia nemo numquam officia pariatur, quaerat quasi sequi sint vero vitae? Nostrum quos reiciendis similique sint veniam!</span><span>Amet debitis dolore est mollitia nostrum obcaecati pariatur provident quidem suscipit tempora voluptas, voluptate voluptatibus. Asperiores consequatur debitis, deleniti dignissimos dolor ducimus excepturi nemo omnis quae, quaerat veniam vitae, voluptate.</span></p>
+    </div>
+  </div>
+
+  <!--行：页尾-->
+  <div class="row">
+    <div class="col-xs-12">
+      <hr/>
+      <p class="text-center">web前端开发</p>
+    </div>
+  </div>
+</div>
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<script src="js/jquery-1.11.3.js"></script>
+<script src="js/bootstrap.js"></script>
+<script>
+  (function () {
+    var s = document.createElement("script");
+    s.onload = function () {
+      bootlint.showLintReportForCurrentDocument([]);
+    };
+    s.src = "js/bootlint.js";
+    document.body.appendChild(s)
+  })();
+</script>
+</body>
+</html>
