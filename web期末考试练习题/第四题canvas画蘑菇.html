@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			body {
+				text-align: center;
+			}
+			
+			canvas {
+				background-color: #5BC0DE;
+			}
+		</style>
+	</head>
+
+	<body>
+		<canvas id="mogu" height="500" width="500"></canvas>
+		<script>
+			var bg = document.getElementById("mogu").getContext('2d');
+			bg.beginPath();
+			bg.moveTo(250, 200);
+			bg.lineTo(200, 250);
+			bg.lineTo(300, 250);
+			bg.closePath();
+			bg.strokeRect(225,250,50,100);
+			bg.stroke();
+		</script>
+	</body>
+
+</html>

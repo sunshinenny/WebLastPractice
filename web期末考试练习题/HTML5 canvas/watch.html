@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>watch</title>
+		<style>
+			body {
+				text-align: center;
+			}
+			
+			canvas {
+				background-color: ghostwhite;
+			}
+		</style>
+	</head>
+
+	<body>
+		<canvas id="watch" height="400" width="400"></canvas>
+		<script>
+			var bg = document.getElementById("watch").getContext('2d');
+			var timer = null;
+
+			function clock() {
+				//获取当前时间
+				var date = new Date();
+				//获取时分秒
+				var h = date.getHours();
+				var m = date.getMinutes();
+				var s = date.getSeconds();
+				//判断h的值
+				h = h + h / 60;
+				h = h > 12 ? h - 12 : h;
+				//清画布
+				bg.clearRect(0, 0, 400, 400);
+				//绘制表盘
+				bg.beginPath();
+				bg.arc(200, 200, 100, 0, Math.PI * 2);
+				bg.fillStyle = "cornflowerblue";
+				bg.fill();
+				bg.closePath();
+				//绘制层次
+				bg.arc(200, 200, 100, 0, Math.PI * 2);
+				bg.lineWidth = 9;
+				bg.strokeStyle = "darkslateblue";
+				bg.stroke();
+				bg.closePath();
+				//绘制时针
+				for(var i = 0; i < 12; i++) {
+					bg.save(); //save() 方法把当前状态的一份拷贝压入到一个保存图像状态的栈中。
+					//这就允许您临时地改变图像状态，然后，通过调用 restore() 来恢复以前的值。
+					bg.translate(200, 200);
+					bg.rotate(30 * i * Math.PI / 180);
+					bg.lineWidth = 3;
+					bg.beginPath();
+					bg.moveTo(0, -80);
+					bg.lineTo(0, -94);
+					bg.strokeStyle = "whitesmoke";
+					bg.stroke();
+					bg.restore();
+				}
+				//画分钟刻度
+				for(var i = 0; i < 60; i++) {
+					bg.save();
+					bg.translate(200, 200);
+					bg.rotate(6 * i * Math.PI / 180);
+					bg.lineWidth = 2;
+					bg.beginPath();
+					bg.moveTo(0, -86);
+					bg.lineTo(0, -94);
+					bg.strokeStyle = "whitesmoke";
+					bg.stroke();
+					bg.restore();
+				}
+				// 画时针
+				bg.save();
+				bg.lineWidth = 5;
+				bg.translate(200, 200);
+				bg.rotate(h * 30 * Math.PI / 180);
+				bg.beginPath();
+				bg.moveTo(0, 6);
+				bg.lineTo(0, -40);
+				bg.lineCap = "round";
+				bg.stroke();
+				bg.restore();
+				// 画分针
+				bg.save();
+				bg.lineWidth = 3;
+				bg.translate(200, 200);
+				bg.rotate(m * 6 * Math.PI / 180);
+				bg.beginPath();
+				bg.moveTo(0, 8);
+				bg.lineTo(0, -60);
+				bg.lineCap = "round";
+				bg.stroke();
+				bg.restore();
+				// 画秒针
+				bg.save();
+				bg.lineWidth = 1;
+				bg.translate(200, 200);
+				bg.rotate(s * 6 * Math.PI / 180);
+				bg.beginPath();
+				bg.moveTo(0, 10);
+				bg.lineTo(0, -75);
+				bg.lineCap = "round";
+				bg.stroke();
+				bg.restore();
+				// 画中心的小圆固定三根针
+				bg.save();
+				bg.beginPath();
+				bg.fillStyle = '#0f0';
+				bg.lineWidth = 2;
+				bg.translate(200, 200);
+				bg.arc(0, 0, 2, 0, 360, false);
+				bg.stroke();
+				bg.fill();
+				bg.restore();
+				// 画秒针上的圆
+				bg.save();
+				bg.fillStyle = 'white';
+				bg.lineWidth = 2;
+				bg.translate(200, 200);
+				bg.rotate(s * 6 * Math.PI / 180);
+				bg.beginPath();
+				bg.arc(0, -60, 2, 0, 360, false);
+				bg.stroke();
+				bg.fill();
+				bg.restore();
+			}
+			clock();
+			timer = setInterval(clock, 1000);
+		</script>
+	</body>
+
+</html>

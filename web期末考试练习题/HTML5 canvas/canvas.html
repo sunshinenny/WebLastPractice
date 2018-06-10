@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>canvas</title>
+		<style>
+			body {
+				text-align: center;
+			}
+		</style>
+	</head>
+
+	<body>
+		<canvas id="move" width="600" height="600"></canvas>
+		<script>
+			var w = 600;
+			var h = 600;
+			//			var tempBackgroud=document.getElementById('move');
+			//			var ctxBg=tempBackgroud.getContext('2d');
+			//			ctxBg.fillStyle="antiquewhite";
+			//			ctxBg.fillRect(0,0,w,h);
+			//			
+			var tempMove = document.getElementById('move');
+			var ctx = tempMove.getContext('2d');
+			var flagX = 0;
+			var flagY = 0;
+			var speed = 1;
+			var xdirection = 1;
+			var ydirection = 1;
+			var color = "antiquewhite";
+			//			var newCtx;
+			var timer = setInterval(function() {
+				var x = 30;
+				var y = 30;
+				var local=Math.random()*10;
+				ctx.clearRect(0, 0, w, h);
+				ctx.fillStyle = color;
+				ctx.fillRect(flagX, flagY, x, y);
+				flagX += local * xdirection;
+				flagY += local * ydirection;
+				if(flagX >= (w - x)) {
+					//碰到边缘后将方块反向
+					xdirection = speed * -1;
+				} else if(flagX <= 0) { //如果flagX小于0
+					//将方向调整为正向
+					xdirection = speed;
+					//重新计算位置，使得方块轨迹有变化
+					//加速方块速度
+					speed += 0.5;
+				}
+				if(flagY >= (h - y)) {
+					ydirection = speed * -1;
+				} else if(flagY <= 0) {
+					ydirection = speed;
+					speed += 0.5;
+				}
+				r = randomNumber();
+				g = randomNumber();
+				b = randomNumber();
+				color = "#" + r + g + b;
+
+				function randomNumber() {
+					var number = Math.random().toFixed(2) * 500;
+					if(number <= 255)
+						return number.toString(16);
+					else randomNumber();
+				}
+			}, 50);
+		</script>
+	</body>
+
+</html>
