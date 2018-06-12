@@ -1,0 +1,12 @@
+@media (max-width: 1200px) {
+#main{
+	width:100%;
+	 
+}
+}
+@media (min-width: 1200px) {
+#main{
+	width: 1170px;
+	margin: 0 auto;
+}
+}

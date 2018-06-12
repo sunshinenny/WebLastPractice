@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <!--		<link href="css/jquery-ui.theme.min.css" />
+            <script src="js/jquery-1.11.3.js"></script>
+            <script src="js/jquery-ui.min.js"></script> -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <link rel="stylesheet" href="http://jqueryui.com/resources/demos/style.css">
+</head>
+
+<body>
+<div id="tabs">
+    <ul>
+        <li>
+            <a href="#fragment-1"><span>选项1</span></a>
+        </li>
+        <li>
+            <a href="#fragment-2"><span>选项2</span></a>
+        </li>
+    </ul>
+    <div id="fragment-1">
+        <p>选项1内容</p>
+    </div>
+    <div id="fragment-2">
+       选项2内容
+    </div>
+</div>
+<script>
+    $("#tabs").tabs();
+    $(function () {
+        $("#accordion")
+            .accordion({
+                header: "> div > h3"
+            })
+            .sortable({
+                axis: "y",
+                handle: "h3",
+                stop: function (event, ui) {
+                    // 当排序时，IE 不能注册 blur，所以触发 focusout 处理程序来移除 .ui-state-focus
+                    ui.item.children("h3").triggerHandler("focusout");
+                }
+            });
+    });
+</script>
+
+<div id="accordion">
+    <div class="group">
+        <h3>面板 1</h3>
+        <div>
+            <p>面板 1 内容</p>
+        </div>
+    </div>
+    <div class="group">
+        <h3>面板 2</h3>
+        <div>
+            <p>面板 2 内容</p>
+        </div>
+    </div>
+</div>
+</body>
