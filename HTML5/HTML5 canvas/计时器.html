@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Watch</title>
+		<style>
+			body{text-align: center;}
+		</style>
+	</head>
+	<body>
+		<canvas id="watch" width="600" height="600"></canvas>
+		<h2 id="time"></h2>
+		<script>
+			var temp=document.getElementById("watch");
+			var draw=temp.getContext('2d');
+			var sd=temp.getContext('2d');
+			var md=temp.getContext('2d');
+			var hd=temp.getContext('2d');
+			//暂时获取时间
+			var d=new Date();
+			console.info(d.getHours()+":"+d.getMinutes()+":"+d.getSeconds());
+			//以后补充
+			var s=0;//秒针
+			var m=0;//分针
+			var h=0;//时针
+			var cout=0;//秒钟统计
+			var allCout=0;//时针统计
+			var allAllCout=0;
+			var pin=setInterval(function(){	
+				//绘制背景
+				draw.beginPath();
+				draw.arc(300,300,300,0,Math.PI*2,false);
+				draw.closePath();
+				draw.fillStyle="aquamarine";
+				draw.fill();
+				//一秒钟转动6°
+				s+=Math.PI/30;
+				sd.beginPath();
+				sd.arc(300,300,280,-Math.PI/2,-Math.PI/2+s,false);
+				sd.strokeStyle="black";
+				sd.stroke();
+				sd.closePath();
+				
+				if(cout==60){
+					//一分钟转动6°
+					m+=Math.PI/30;
+					//重置秒钟起点
+					s=0;
+					//重置秒钟统计
+					cout=0;
+					//给时钟加一
+					allCout++;
+					//转满一圈后清除内容
+					sd.clearRect(0,0,600,600);
+				}
+				//绘制分针
+				md.beginPath();
+				md.arc(300,300,260,-Math.PI/2,-Math.PI/2+m,false);
+				md.strokeStyle="blue";
+				md.stroke();
+				md.closePath();
+				
+				if(allCout==60){
+					//一小时转动30°
+					h+=Math.PI/6;
+					//重置分钟起点
+					s=0;
+					m=0;
+					//重置分钟统计
+					allCout=0;
+					allAllCout++;
+					//转满一圈后清除内容
+					md.clearRect(0,0,600,600);				
+				}
+				//绘制时针
+				hd.beginPath();
+				hd.arc(300,300,240,-Math.PI/2,-Math.PI/2+h,false);
+				hd.strokeStyle="red";
+				hd.stroke();
+				hd.closePath();
+				
+				if(allAllCout==24){
+					s=0;
+					m=0;
+					h=0;
+					//重置分钟统计
+					allAllCout=0;
+					//转满一圈后清除内容
+					hd.clearRect(0,0,600,600);				
+				}
+				//秒钟统计
+				cout++;
+				var t="计时器："+allAllCout+":"+allCout+":"+cout;
+				var time=document.getElementById("time").innerHTML=t;
+			},1)
+		</script>
+	</body>
+</html>

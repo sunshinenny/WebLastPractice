@@ -1,0 +1,32 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+	<title>读取并修改元素的属性</title>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="css/5.css" />
+	<style>.foreground { z-index: 1; }</style>
+</head>
+<body>
+	<h2>实现多标签页效果</h2>
+	<ul id="tab">
+		<li id="tab1" onclick="toggle(this)">10元套餐</li>
+		<li id="tab2" onclick="toggle(this)">30元套餐</li>
+		<li id="tab3" onclick="toggle(this)">50元包月</li>
+	</ul>
+	<div id="container">
+		<!--<div id="content1" class="foreground">-->
+		<!--强调：使用style.设置的属性，默认格式都是:
+			"属性: 值;"-->
+		<div id="content1" style="z-index: 1;">
+			10元套餐详情：<br />&nbsp;每月套餐内拨打100分钟，超出部分2毛/分钟
+		</div>
+		<div id="content2">
+			30元套餐详情：<br />&nbsp;每月套餐内拨打300分钟，超出部分1.5毛/分钟
+		</div>
+		<div id="content3">
+			50元包月详情：<br />&nbsp;每月无限量随心打
+		</div>
+	</div>
+	<script type="text/javascript" src="js/5.js" ></script>
+</body>
+</html>

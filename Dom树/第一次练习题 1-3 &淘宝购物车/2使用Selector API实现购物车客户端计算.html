@@ -1,0 +1,103 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<title>使用Selector API实现购物车客户端计算</title>
+<meta charset="utf-8" />
+<style>
+	table{width:600px; text-align:center;
+		border-collapse:collapse;
+	}
+	td,th{border:1px solid black}
+	td[colspan="3"]{text-align:right;}
+	#data tbody td:last-child{background:red;}
+	#data tfoot>tr>td:last-child{background:green;}
+</style>
+<script type="text/javascript" >
+	window.onload=function chh(){//初始化total
+		var getTd=document.getElementsByTagName('td');
+		var total=document.getElementById('1');
+		var i=Number(getTd[3].innerHTML.slice(1))+Number(getTd[7].innerHTML.slice(1))+Number(getTd[11].innerHTML.slice(1))
+		total.innerHTML='¥'+i;
+	}
+	function calc(btn){
+		//进行数量和单个商品总价的计算
+		var goodMoney=Number(btn.parentElement.previousElementSibling.innerHTML.slice(1));
+		var goodNums;
+		if(btn.innerText=='-'){
+			goodNums=Number(btn.nextElementSibling.innerHTML)
+			if(goodNums>1){
+				goodNums--;
+				btn.nextElementSibling.innerText=goodNums;
+			}
+		}
+		if(btn.innerText=='+'){
+			goodNums=Number(btn.previousElementSibling.innerHTML)+1;
+			btn.previousElementSibling.innerText=goodNums;
+		}	
+		var calcMoney=goodMoney*goodNums;
+		btn.parentElement.nextElementSibling.innerHTML='¥'+calcMoney;
+		
+		calcAll();
+
+
+	}
+	function calcAll(){
+		var getTd=document.getElementsByTagName('td');
+		var total=document.getElementById('1');
+		var i=Number(getTd[3].innerHTML.slice(1))+Number(getTd[7].innerHTML.slice(1))+Number(getTd[11].innerHTML.slice(1))
+		total.innerHTML='¥'+i;
+	}
+</script>
+</head>
+<body>
+	<table id="data">
+		<thead>
+			<tr>
+				<th>商品名称</th>
+				<th>单价</th>
+				<th>数量</th>
+				<th>小计</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>iPhone6</td>
+				<td>&yen;4000</td>
+				<td>
+					<button onclick="calc(this)">-</button>
+					<span>1</span>
+					<button onclick="calc(this)">+</button>
+				</td>
+				<td>&yen;4000</td>
+			</tr>
+			<tr>
+				<td>iPhone6 plus</td>
+				<td>&yen;5000</td>
+				<td>
+				<button onclick="calc(this)">-</button>
+				<span>1</span>
+				<button onclick="calc(this)">+</button>
+				</td>
+				<td>&yen;5000</td>
+			</tr>
+			<tr>
+				<td>iPad Air 2</td>
+				<td>&yen;6000</td>
+				<td>
+					 <button onclick="calc(this)">-</button>
+					<span>1</span>
+					<button onclick="calc(this)">+</button>
+				</td>
+				<td>&yen;6000</td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<td colspan="3">Total: </td>
+				<td id="1">&yen;15000</td>
+			</tr>
+		</tfoot>
+	</table>
+	
+</body>
+</html>

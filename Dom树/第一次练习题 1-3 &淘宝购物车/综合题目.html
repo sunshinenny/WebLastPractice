@@ -1,0 +1,143 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>综合题目</title>
+<meta charset="utf-8" />
+<style>
+	table{width:600px; text-align:center;
+		border-collapse:collapse;
+	}
+	td,th{border:1px solid black}
+	td[colspan="3"]{text-align:right;}
+	#data tbody td:last-child{background:red;}
+	#data tfoot>tr>td:last-child{background:green;}
+</style>
+<script type="text/javascript" >
+	window.onload=function chh(){//初始化total
+		var getTd=document.getElementsByTagName('td');
+		var total=document.getElementById('1');
+		//默认是勾选状态
+		var chooseBox=document.getElementsByTagName('input');
+		for(var q=0;q<4;q++){
+			chooseBox[q].checked=true;
+		}
+		var i=Number(getTd[3].innerHTML.slice(1))+Number(getTd[7].innerHTML.slice(1))+Number(getTd[11].innerHTML.slice(1))
+		total.innerHTML='¥'+i;
+	}
+	function calc(btn,num){
+		//throw new Error()可以结束函数
+		var exit=document.getElementById(num);
+		if(exit.checked==false){
+			throw new Error("未选中");
+		}
+		else{
+		//进行数量和单个商品总价的计算
+		var goodMoney=Number(btn.parentElement.previousElementSibling.innerHTML.slice(1));
+		var goodNums;
+		if(btn.innerText=='-'){
+			goodNums=Number(btn.nextElementSibling.innerHTML)
+			if(goodNums>1){
+				goodNums--;
+				btn.nextElementSibling.innerText=goodNums;
+			}
+		}
+		if(btn.innerText=='+'){
+			goodNums=Number(btn.previousElementSibling.innerHTML)+1;
+			btn.previousElementSibling.innerText=goodNums;
+		}	
+		var calcMoney=goodMoney*goodNums;
+		btn.parentElement.nextElementSibling.innerHTML='¥'+calcMoney;
+		
+		calcAll();
+		}
+	}
+	function calcAll(){
+		var getTd=document.getElementsByTagName('td');
+		var total=document.getElementById('1');
+		var choose=document.getElementsByTagName('input');
+		var k=new Array(4);
+		for(var p=1;p<4;p++){
+			if(choose[p].checked==true)	k[p]=1;
+			else k[p]=0;
+		}
+		var i=Number(getTd[3].innerHTML.slice(1))*k[1]+Number(getTd[7].innerHTML.slice(1))*k[2]+Number(getTd[11].innerHTML.slice(1))*k[3];
+		total.innerHTML='¥'+i;
+	}
+//checkBox's option
+	function selectAll(box){
+		var changeZreo=document.getElementById('1');
+		if(box.checked==false) changeZreo.innerText='¥0';
+		//全选修改total没完成
+	var i=document.getElementsByTagName('input');
+		for(var j=1;j<4;j++)
+			i[j].checked=box.checked;
+}
+
+	function checkSel(box){
+		calcAll();//重置统计数值
+		var i=document.getElementsByTagName('input');
+		var js=0; 
+		var flag=1;//保持全选状态
+		for(var j=1;j<4;j++){
+				if(i[j].checked==false)	flag=0;//从1变成0，表示没有全选
+				else js++;
+			}
+		if(js==3) i[0].checked=true;
+		if(flag==1) i[0].checked=true;
+		else i[0].checked=false;
+	}
+</script>
+
+</head>
+<body>
+	<table id="data">
+		<thead>
+			<tr>
+				<th><input type="checkbox" onclick="selectAll(this)" />全选   商品名称</th>
+				<th>单价</th>
+				<th>数量</th>
+				<th>小计</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><input type="checkbox" onclick="checkSel(this)" id="choose1"/>iPhone6</td>
+				<td>&yen;4000</td>
+				<td>
+					<button onclick="calc(this,'choose1')">-</button>
+					<span>1</span>
+					<button onclick="calc(this,'choose1')">+</button>
+				</td>
+				<td>&yen;4000</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" onclick="checkSel(this)"  id="choose2"/>iPhone6 plus</td>
+				<td>&yen;5000</td>
+				<td>
+				<button onclick="calc(this,'choose2')">-</button>
+				<span>1</span>
+				<button onclick="calc(this,'choose2')">+</button>
+				</td>
+				<td>&yen;5000</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" onclick="checkSel(this)" id="choose3"/>iPad Air 2</td>
+				<td>&yen;6000</td>
+				<td>
+					 <button onclick="calc(this,'choose3')">-</button>
+					<span>1</span>
+					<button onclick="calc(this,'choose3')">+</button>
+				</td>
+				<td>&yen;6000</td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<td colspan="3">Total: </td>
+				<td id="1">&yen;15000</td>
+			</tr>
+		</tfoot>
+	</table>
+	
+</body>
+</html>

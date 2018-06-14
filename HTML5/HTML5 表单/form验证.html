@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+		<link href="css/style.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="css/jquery-ui.min.css" />
+		<link rel="stylesheet" href="css/1.css" />
+		<script src="js/jquery-3.3.1.min.js"></script>
+		<script src="js/Validform_v5.3.2_min.js"></script>
+		<script src="js/jquery-ui.min.js"></script>
+		<script src="js/time.js"></script>
+		<script language="JavaScript">
+			$(function() {
+				$("#container").tabs();
+				$("#tab").sortable();
+				$("#tab").disableSelection();
+			});
+		</script>
+	</head>
+
+	<body>
+		<div id='container'>
+
+			<ul id="tab">
+				<li>
+					<a href="#content-1">注册</a>
+				</li>
+				<li>
+					<a href="#content-2">元素测试</a>
+				</li>
+				<li>
+					<a href="#content-3">RGB</a>
+				</li>
+				<li>
+					<a href="#content-4">jQuery UI</a>
+				</li>
+			</ul>
+			<div id="content-1">
+				<h3 align="center" class="title">用户注册</h1>
+			<h6 align="center"><span style="color: red;">*</span>内容为必填项<br>其他内容可以为空</h6>	
+			<form action="#" name="form1" id="form1">
+				<div class="basic-info" align="center">
+					姓名：<span style="color: red;">*</span><input type="text" placeholder="请输入你的姓名,至少3位" autofocus="" class="name" datatype="s3-16" errormsg="请检查用户名格式"/><br />
+					邮箱：<span style="color: red;">*</span><input type="email" placeholder="请输入你的邮箱" /><br />
+					密码：<span style="color: red;">*</span><input type="password" placeholder="请输入你的密码,6到8位" class="password" datatype="n6-8" errormsg="密码必须是6到8位数字"/><br />
+					验证：<span style="color: red;">*</span><input type="password" placeholder="请再次输入密码" class="password2" recheck="password" datatype="*" errormsg="两次密码不一致"/>
+				</div>
+				<div class="add-info" align="center">
+					<hr/>
+					个人网页：<input type="url" placeholder="请输入你的个人网页" ignore="ignore" /><br />
+					联系方式：<input type="text" placeholder="你的联系方式(11位)" class="tel" datatype="m" errormsg="联系方式格式错误" ignore="ignore" /><br />
+					<span>生日：</span><input type="date" /><br />
+					<span>注册渠道：</span><input list="ways" /><br />
+					<datalist id="ways">
+						<option value="自己找到的"></option>
+						<option value="他人介绍"></option>
+					</datalist>
+				</div>
+				<div class="div-button" align="center">
+					<br />
+					<!--
+                    	作者：827957168@qq.com
+                    	时间：2018-05-07
+                    	描述：实现倒计时功能
+                    -->
+				<div align="center">
+						<div id="remainSeconds" style="display:none">100000</div>  
+						<div id="remainTime" style="font-size: 20px;"></div>  
+				</div>					
+					<input type="submit" value="提交"/>
+					<input type="reset" value="重置"/>
+				</div>
+			</form>
+			<script src="js/validity.js"></script>
+			</div>
+			<div id="content-2">
+				<span>测试progress标签（显示进度）</span><progress value="18" max="44"></progress><br />
+				<span>测试meter标签（显示刻度）</span><meter value="18" min="0" max="44"></meter><br />
+				<span>测试output标签</span>
+				<form oninput="x.value=parseInt(a.value)+parseInt(b.value)">0
+				<input type="range" id="a" value="50">100 +<input type="number" id="b" value="50" />=<output name="x" for="a b"></output>
+				</form>
+			</div>
+			<div id="content-3">
+				<table>
+					<tr>
+						<td colspan="3">你喜欢的颜色：</td>
+					</tr>
+					<tr>
+						<td><input type="range" min="0" max="255" value="0" class="R" ignore="ignore" /></td>
+						<td><input type="range" min="0" max="255" value="0" class="G" ignore="ignore" /></td>
+						<td><input type="range" min="0" max="255" value="0" class="B" ignore="ignore" /></td>
+					</tr>
+				</table>
+			<div class="color-div"><span class="showColor">实时预览</span><input type="color" value="#000000" class="color" /><span class="colorValue">#000000</span></div>
+					<script src="js/rgb.js"></script>
+			</div>	
+			
+			<div id="content-4">					
+				<div id="accordion">
+				  <h3>自动补全</h3>
+				<div>
+					<label for="tags">标签：</label>
+					<input id="tags">
+				</div>
+				<h3>日期选择器</h3>
+				<div>
+					<p>
+						日期：<input type="text" id="datepicker">
+					</p>
+				</div>
+				<h3>树形结构</h3>
+				<div>
+					<ul class="tree">
+						<li>
+							<span class="open" ">考勤管理</span>
+						<ul class="show ">
+							<li>日常考勤</li>
+							<li>请假申请</li>
+							<li>加班/出差</li>
+						</ul>
+					</li>
+					<li><span class="closed "">信息中心</span>
+							<ul class="hide">
+								<li>通知公告</li>
+								<li>公司新闻</li>
+								<li>规章制度</li>
+							</ul>
+						</li>
+						<li>
+							<span class="closed">协同办公</span>
+							<ul class="hide ">
+								<li>公文流转</li>
+								<li>文件中心</li>
+								<li>内部邮件</li>
+								<li>即时通信</li>
+								<li>短信提醒</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<h3>特效</h3>
+				<div>
+					<lable style="background-color: #A9DBA9;" id="byebye">切换隐藏</lable>
+					<button id="byeButton">运行特效</button>
+				</div>
+
+				<h3>官网特效</h3>
+				<div>
+					<div class="toggler">
+						<div id="effect" class="ui-widget-content ui-corner-all">
+							<h3 class="ui-widget-header ui-corner-all">隐藏（Hide）</h3>
+							<p>
+								Etiam libero neque, luctus a, eleifend nec, semper at, lorem. Sed pede. Nulla lorem metus, adipiscing ut, luctus sed, hendrerit vitae, mi.
+							</p>
+						</div>
+					</div>
+
+					<select name="effects" id="effectTypes">
+						<option value="blind">百叶窗特效（Blind Effect）</option>
+						<option value="bounce">反弹特效（Bounce Effect）</option>
+						<option value="clip">剪辑特效（Clip Effect）</option>
+						<option value="drop">降落特效（Drop Effect）</option>
+						<option value="explode">爆炸特效（Explode Effect）</option>
+						<option value="fold">折叠特效（Fold Effect）</option>
+						<option value="highlight">突出特效（Highlight Effect）</option>
+						<option value="puff">膨胀特效（Puff Effect）</option>
+						<option value="pulsate">跳动特效（Pulsate Effect）</option>
+						<option value="scale">缩放特效（Scale Effect）</option>
+						<option value="shake">震动特效（Shake Effect）</option>
+						<option value="size">尺寸特效（Size Effect）</option>
+						<option value="slide">滑动特效（Slide Effect）</option>
+					</select>
+
+					<a href="#" id="button" class="ui-state-default ui-corner-all">运行特效</a>
+				</div>
+			</div>
+		</div>
+		</div>
+		<!--
+	作者：827957168@qq.com
+	时间：2018-05-07
+	描述：JS代码
+-->
+		<script>
+			//实现自动补全
+			var availableTags = [
+				"ActionScript ",
+				"AppleScript ",
+				"Asp ",
+				"BASIC ",
+				"C ",
+				"C++ ",
+				"Clojure ",
+				"COBOL ",
+				"ColdFusion ",
+				"Erlang ",
+				"Fortran ",
+				"Groovy ",
+				"Haskell ",
+				"Java ",
+				"JavaScript ",
+				"Lisp ",
+				"Perl ",
+				"PHP ",
+				"Python ",
+				"Ruby ",
+				"Scala ",
+				"Scheme "
+			];
+			$("#tags ").autocomplete({
+				source: availableTags
+			});
+			//实现折叠面板
+			$("#accordion ").accordion();
+			//实现日期选择器
+			$("#datepicker ").datepicker();
+			//树形结构
+			$("#id1 ").click(function() {
+				$(this).nextAll().toggle();
+				$(this).toggleClass("open closed ");
+			});
+
+			$("span ").click(function() {
+				if($(this).hasClass("closed ")) {
+					$("span ").next().hide(); //隐藏所有的ul
+					$("span ").removeClass(); //移除所有类
+					$("span ").addClass("closed "); //设置为closed
+				}
+				$(this).next().toggle(); //切换显示状态
+				$(this).toggleClass("open closed ");
+			})
+
+			//隐藏与显示特效
+			$("#byeButton").click(function() {
+				$("#byebye").toggle(2000);
+			})
+			//官网的特效
+			$(function() {
+				// 运行当前选中的特效
+				function runEffect() {
+					// 从中获取特效类型
+					var selectedEffect = $("#effectTypes").val();
+
+					// 大多数的特效类型默认不需要传递选项
+					var options = {};
+					// 一些特效带有必需的参数
+					if(selectedEffect === "scale") {
+						options = {
+							percent: 0
+						};
+					} else if(selectedEffect === "size") {
+						options = {
+							to: {
+								width: 200,
+								height: 60
+							}
+						};
+					}
+
+					// 运行特效
+					$("#effect").hide(selectedEffect, options, 1000, callback);
+				};
+
+				// 回调函数
+				function callback() {
+					setTimeout(function() {
+						$("#effect").removeAttr("style").hide().fadeIn();
+					}, 1000);
+				};
+
+				// 根据选择菜单值设置特效
+				$("#button").click(function() {
+					runEffect();
+					return false;
+				});
+			});
+		</script>
+	</body>
+
+</html>

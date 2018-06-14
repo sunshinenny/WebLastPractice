@@ -1,0 +1,40 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<title>1. 实现伸缩二级菜单</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="css/1.css" />
+<script type="text/javascript" src="js/1.js" ></script>
+
+</head>
+<body>
+	
+	<ul class="tree">
+		<li>
+			<span class="open" onclick="toggle(this)">考勤管理</span>
+			<ul class="show">
+				<li>日常考勤</li>
+				<li>请假申请</li>
+				<li>加班/出差</li>
+			</ul>
+		</li>
+		<li><span class="closed" onclick="toggle(this)">信息中心</span>
+			<ul class="hide">
+				<li>通知公告</li>
+				<li>公司新闻</li>
+				<li>规章制度</li>
+			</ul>
+		</li>
+		<li><span class="closed" onclick="toggle(this)">协同办公</span>
+			<ul class="hide">
+				<li>公文流转</li>
+				<li>文件中心</li>
+				<li>内部邮件</li>
+				<li>即时通信</li>
+				<li>短信提醒</li>
+			</ul>
+		</li>
+	</ul>
+	
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>淘宝购物车</title>
+<meta charset="utf-8" />
+<style>
+	table{width:600px; text-align:center;
+		border-collapse:collapse;
+	}
+	td,th{border:1px solid black}
+	td[colspan="3"]{text-align:right;}
+	#data tbody td:last-child{background:red;}
+	#data tfoot>tr>td:last-child{background:green;}
+</style>
+<script type="text/javascript" src="js/zonghe.js"></script>
+</head>
+<body>
+	<table id="data">
+		<thead>
+			<tr>
+				<th><input type="checkbox" onclick="selectAll(this),calcAll()"/>全选</th>
+				<th>店铺名</th>
+				<th>商品名称</th>
+				<th>单价</th>
+				<th>数量</th>
+				<th>小计</th>
+
+			</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<td><input type="checkbox" onclick="selectShop(this,1)"/></td>
+			<td><font color="#FF0000">京东Apple自营店</font></td>
+			<td><input type="checkbox" onclick="checkSel(this,1)"/>iPhone6</td>
+			<td>&yen;4000</td>
+			<td>
+				<button onclick="calc(this)" >-</button>
+				<span>1</span>
+				<button onclick="calc(this)">+</button>
+				<button onclick="deleteOne(this)">删除</button>
+			</td>
+			<td id="td1">&yen;4000</td>
+		</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td><input type="checkbox" onclick="checkSel(this,1)"/>iPhone6 plus</td>
+					<td>&yen;5000</td>
+					<td>
+					<button onclick="calc(this)">-</button>
+					<span>1</span>
+					<button onclick="calc(this)">+</button>
+					<button onclick="deleteOne(this)">删除</button>
+					</td>
+					<td id="td2">&yen;5000</td>
+				</tr>
+			
+		<tr>
+		<td><input type="checkbox" onclick="selectShop(this,4)"/></td>
+		<td><font color="#FF0000">京东小米自营店</font></td>
+			<td><input type="checkbox" onclick="checkSel(this,4)"/>小米电视45寸</td>
+			<td>&yen;6000</td>
+			<td>
+				 <button onclick="calc(this)">-</button>
+				<span>1</span>
+				<button onclick="calc(this)">+</button>
+				<button onclick="deleteOne(this)">删除</button>
+			</td>
+			<td id="td3">&yen;6000</td>
+		</tr>
+			
+				<tr>
+					<td></td>
+				<td></td>
+					<td><input type="checkbox" onclick="checkSel(this,4)"/>小米6</td>
+					<td>&yen;2500</td>
+					<td>
+						 <button onclick="calc(this,)">-</button>
+						<span>1</span>
+						<button onclick="calc(this,)">+</button>
+						<button onclick="deleteOne(this)">删除</button>
+					</td>
+					<td id="td4">&yen;2500</td>
+				</tr>			
+		</tbody>
+		<tfoot>
+			<tr>
+				<td colspan="5" align="right">Total:</td>
+				<td id="total">&yen;15000</td>
+			</tr>
+		</tfoot>
+	</table>
+	<a href="../test/hello.html">test</a>
+</body>
+</html>
