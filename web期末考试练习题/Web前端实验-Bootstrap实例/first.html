@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<title></title>
+		<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.1.0/css/bootstrap.min.css">
+		<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://cdn.bootcss.com/popper.js/1.12.5/umd/popper.min.js"></script>
+		<script src="https://cdn.bootcss.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+	</head>
+
+	<body>
+		<!--
+        	描述：1. 参考课上介绍的案例，实现PC、PAD、phone下的布局，内容包括导航条、下拉列表、图片等。
+			2. 自己设计Bootstrap网页布局，内容自选，做一个完整的页面。
+        -->
+		<div class="container-fluid">
+			<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+				<!-- Brand -->
+				<a class="navbar-brand" href="#">导航栏示例</a>
+
+				<!-- Toggler/collapsibe Button -->
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+				<!-- Navbar links -->
+				<div class="collapse navbar-collapse" id="collapsibleNavbar">
+					<ul class="navbar-nav">
+						<li class="nav-item">
+							<a class="nav-link" href="#">连接1</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">连接2</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">连接3</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12 col-md-6 col-lg-4">
+					<div class="dropdown">
+						<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+    下拉列表示例1
+  </button>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" href="#">项目1</a>
+							<a class="dropdown-item" href="#">项目2</a>
+							<a class="dropdown-item" href="#">项目3</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-12 col-md-6 col-lg-4">
+					<div class="dropdown">
+						<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+    下拉列表示例2
+  </button>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" href="#">项目1</a>
+							<a class="dropdown-item" href="#">项目2</a>
+							<a class="dropdown-item" href="#">项目3</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-12 col-md-6 col-lg-4">
+					<div class="dropdown">
+						<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+    下拉列表示例3
+  </button>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" href="#">项目1</a>
+							<a class="dropdown-item" href="#">项目2</a>
+							<a class="dropdown-item" href="#">项目3</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="img">
+			<img class="img-fluid" src="img/Apple.jpg" alt="Chania">
+			<img class="img-fluid" src="img/Banana.jpg" alt="Chania">
+			<img class="img-fluid" src="img/Tomato.jpg" alt="Chania">
+			<img class="img-fluid" src="img/Pear.jpg" alt="Chania">
+			<img class="img-fluid" src="img/Pear.jpg" alt="Chania">
+			<img class="img-fluid" src="img/Pear.jpg" alt="Chania">
+		</div>
+	</body>
+
+</html>
