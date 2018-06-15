@@ -1,0 +1,24 @@
+<html>
+<head>
+<script type="text/javascript">
+function selectOrange()
+{
+document.getElementById("orange").selected=true;
+}
+</script>
+</head>
+
+<body>
+<form>
+Select your favorite fruit:
+<select>
+<option id="apple">Apple</option>
+<option id="orange">Orange</option>
+<option id="pineapple" selected="selected">Pineapple</option>
+<option id="banana">Banana</option>
+</select>
+<br /><br />
+<input type="button" onclick="selectOrange()" value="Select Orange">
+</form>
+</body>
+</html>

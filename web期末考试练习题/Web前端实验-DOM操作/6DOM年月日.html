@@ -1,25 +1,54 @@
 <!DOCTYPE html>
 <html>
+
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
 	</head>
+
 	<body>
 		<select id="selyy" onchange="changeDD()">
 			<script>
-				for(i=1900;i<=2018;i++)
-				document.writeln("<option value='" + i +"'>" + i + "</option>")
+				for(i = 1900; i <= 2018; i++)
+					document.writeln("<option value='" + i + "'>" + i + "</option>")
 			</script>
 		</select>
 		<select id="selmm" onchange="changeDD()">
 			<script>
-				for(i=1;i<=12;i++)
-				document.writeln("<option value='" + i +"'>" + i + "</option>")
+				for(i = 1; i <= 12; i++)
+					document.writeln("<option value='" + i + "'>" + i + "</option>")
 			</script>
 		</select>
 		<select id="seldd">
-			
+
 		</select>
-		<script type="text/javascript" src="js/6.js" ></script>
+		<script type="text/javascript">
+			function changeDD() {
+				//拿到select对象
+				var myselect = document.getElementById('selyy');
+				//拿到选中项的索
+				var index = myselect.selectedIndex; // selectedIndex代表的是你所选中项的index
+				//拿到选中项options的value
+				myselect.options[index].value;
+				//拿到选中项options的text
+				var year = myselect.options[index].text;
+				/*				//拿到select对象
+								var mmSelect = document.getElementById('selmm');
+								//拿到选中项的索
+								var indexMm = mmSelect.selectedIndex; // selectedIndex代表的是你所选中项的index
+								//拿到选中项options的value
+								mmSelect.options[indexMm].value;
+								//拿到选中项options的text
+								var month=mmSelect.options[indexMm].text;*/
+				if((year % 4 == 0) && (year % 100 != 0 || year % 400 == 0)) {
+					/*if(month==1 || month==3 ||month==4 ||month=6 ||month==8 ||month==10 ||month==12){
+						for(j=0;j<31;j++) document.getElementById('seldd').writeln("<option value='" + j + "'>" + j + "</option>");*/
+					alert(year);
+				}
+
+			}
+			}
+		</script>
 	</body>
+
 </html>
