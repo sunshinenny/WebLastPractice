@@ -1,0 +1,40 @@
+table{width:700px}
+/*父元素下的第1个，第n个，最后一个td子元素*/
+td:first-child{width:60px}
+/*IE不支持nth-child*/
+td:nth-child(2){width:200px}
+/*IE*/
+td:first-child+td{width:200px}
+/*IE不支持--可以靠总宽度来调节
+td:last-child{width:340px}*/
+td span{color:red}
+
+.vali_Info{/* 页面初始，验证消息不显示 */
+	display:none;
+}
+.txt_focus{/*当文本框获得焦点时穿上*/
+	border-top:2px solid black;
+	border-left:2px solid black;
+}/*当文本框失去焦点时脱下*/
+
+.vali_success,.vali_fail{
+	background-repeat:no-repeat;
+    background-position:left center;
+	display:block;
+}
+/* 验证消息：验证通过时的样式 */
+.vali_success{
+    background-image:url("../img/ok.png");
+	padding-left:20px;
+	width:0px;height:20px;/*隐藏提示*/
+	overflow:hidden;
+}
+/* 验证消息：验证失败时的样式 */
+.vali_fail{
+    background-image:url("../img/warning.png");
+    border:1px solid red;
+    background-color:#ddd;
+    color:Red;
+    padding-left:30px;
+}
+

@@ -1,0 +1,54 @@
+﻿<!DOCTYPE HTML>
+<html>
+
+	<head>
+		<title>读取并修改元素的属性</title>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" href="js/jquery-ui.min.css" />
+		<style>
+			.foreground {
+				z-index: 1;
+			}
+		</style>
+	</head>
+	<script src="js/jquery-3.3.1.min.js">
+	</script>
+	<script src="js/jquery-ui.min.js">
+	</script>
+	<script language="JavaScript">
+		$(function() {
+			$("#container").tabs();
+		});
+	</script>
+
+	<body>
+		<h2>实现多标签页效果</h2>
+		<div id="container">
+			<ul id="tab">
+				<li>
+					<a href="#content-1">10元套餐</a>
+				</li>
+				<li>
+					<a href="#content-2">30元套餐</a>
+				</li>
+				<li>
+					<a href="#content-3">50元包月</a>
+				</li>
+			</ul>
+
+			<!--<div id="content1" class="foreground">-->
+			<!--强调：使用style.设置的属性，默认格式都是:
+			"属性: 值;"-->
+			<div id="content-1" style="z-index: 1;">
+				10元套餐详情：<br />&nbsp;每月套餐内拨打100分钟，超出部分2毛/分钟
+			</div>
+			<div id="content-2">
+				30元套餐详情：<br />&nbsp;每月套餐内拨打300分钟，超出部分1.5毛/分钟
+			</div>
+			<div id="content-3">
+				50元包月详情：<br />&nbsp;每月无限量随心打
+			</div>
+		</div>
+	</body>
+
+</html>

@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>全选和取消全选</title>
+		<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$("#selAll").click(function() {
+					$("input").prop("checked", this.checked);
+				})
+
+				$(":checkbox[name='adminID']").click(function() {
+					$("#selAll").prop("checked",
+						$(":checkbox[name='adminID']").length == $(":checkbox[name='adminID']:checked").length
+					);
+
+				})
+			});
+		</script>
+	</head>
+
+	<body>
+		<h2>管理员列表</h2>
+		<table border="1px" width="500px">
+			<thead>
+				<tr>
+					<th><input type="checkbox" id="selAll" />全选</th>
+					<th>管理员ID</th>
+					<th>姓名</th>
+					<th>操作</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><input type="checkbox" name="adminID" /></td>
+					<td>1</td>
+					<td>Tester</td>
+					<td>修改 删除</td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" name="adminID" /></td>
+					<td>2</td>
+					<td>Manager</td>
+					<td>修改 删除</td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" name="adminID" /></td>
+					<td>3</td>
+					<td>Analyst</td>
+					<td>修改 删除</td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" name="adminID" /></td>
+					<td>4</td>
+					<td>Admin</td>
+					<td>修改 删除</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</body>
+
+</html>

@@ -1,0 +1,64 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<title>1. 实现伸缩二级菜单</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="css/1.css" />
+<script src="js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+	
+	$("#id1").click(function(){
+		$(this).nextAll().toggle();
+		$(this).toggleClass("open closed");	
+	});
+	
+	$("span").click(function(){
+			if($(this).hasClass("closed")){
+				$("span").next().hide();//隐藏所有的ul
+				$("span").removeClass();//移除所有类
+				$("span").addClass("closed");//设置为closed
+			}
+			$(this).next().toggle();//切换显示状态
+			$(this).toggleClass("open closed");
+			
+		}
+			)
+	}	
+	
+)
+	
+	
+</script>
+</head>
+<body>
+	<div id="id1" class="open">菜单</div>
+	<ul class="tree">
+		<li>
+			<span class="open"">考勤管理</span>
+			<ul class="show">
+				<li>日常考勤</li>
+				<li>请假申请</li>
+				<li>加班/出差</li>
+			</ul>
+		</li>
+		<li><span class="closed"">信息中心</span>
+			<ul class="hide">
+				<li>通知公告</li>
+				<li>公司新闻</li>
+				<li>规章制度</li>
+			</ul>
+		</li>
+		<li><span class="closed"">协同办公</span>
+			<ul class="hide">
+				<li>公文流转</li>
+				<li>文件中心</li>
+				<li>内部邮件</li>
+				<li>即时通信</li>
+				<li>短信提醒</li>
+			</ul>
+		</li>
+	</ul>
+	
+</body>
+</html>

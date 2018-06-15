@@ -1,0 +1,53 @@
+﻿<!DOCTYPE HTML>
+<html>
+
+	<head>
+		<title>1. 实现伸缩二级菜单</title>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" href="css/1.css" />
+		<script src="js/jquery-3.3.1.min.js"></script>
+		<script src="js/jquery-ui.min.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				$("#accordion").accordion({
+					collapsible: true
+				});
+				$("#menu").accordion({
+					collapsible: true
+				});
+			});
+		</script>
+	</head>
+
+	<body>
+		<div id="menu">
+			<h2>菜单</h2>
+			<div id="accordion">
+				<h3>考勤管理</h3>
+				<div>
+					<ul>
+						<h6>日常考勤</h6>
+						<h6>请假申请</h6>
+						<h6>加班/出差</h6>
+					</ul>
+				</div>
+				<h3>信息中心</h3>
+				<div>
+					<ul>
+						<h6>通知公告</h6>
+						<h6>公司新闻</h6>
+						<h6>规章制度</h6>
+					</ul>
+				</div>
+				<h3>协同办公</h3>
+				<div>
+					<h6>公文流转</h6>
+					<h6>文件中心</h6>
+					<h6>内部邮件</h6>
+					<h6>即时通信</h6>
+					<h6>短信提醒</h6></div>
+			</div>
+		</div>
+	</body>
+
+</html>
