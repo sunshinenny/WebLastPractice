@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<select id="selyy" onchange="changeDD()">
+			<script>
+				for(i = 1900; i <= 2018; i++)
+					document.writeln("<option value='" + i + "'>" + i + "</option>")
+			</script>
+		</select>
+		<select id="selmm" onchange="changeDD()">
+			<script>
+				for(i = 1; i <= 12; i++)
+					document.writeln("<option value='" + i + "'>" + i + "</option>")
+			</script>
+		</select>
+		<select id="seldd">
+
+		</select>
+		<script type="text/javascript">
+			//当页面加载完成后直接填充select对象
+			window.onload = changeDD();
+
+			function changeDD() {
+				/**
+				 * 以下内容为了获取选中的年份
+				 */
+				//拿到select对象
+				var myselect = document.getElementById('selyy');
+				//拿到选中项的索
+				var index = myselect.selectedIndex; // selectedIndex代表的是你所选中项的index
+				//拿到选中项options的value
+				myselect.options[index].value;
+				//拿到选中项options的text
+				var year = myselect.options[index].text;
+
+				/**
+				 * 以下内容为了获取选中的月份
+				 */
+				//拿到select对象
+				var mmSelect = document.getElementById('selmm');
+				//拿到选中项的索
+				var indexMm = mmSelect.selectedIndex; // selectedIndex代表的是你所选中项的index
+				//拿到选中项options的value
+				mmSelect.options[indexMm].value;
+				//拿到选中项options的text
+				var month = mmSelect.options[indexMm].text;
+				//调用clear函数，清除已有的day
+				clear();
+				//进行闰年的判断
+				if((year % 4 == 0) && (year % 100 != 0 || year % 400 == 0)) {
+					//如果是闰年，传递29过去
+					checkThanCreate(29, month);
+				} else {
+					//否则传递28
+					checkThanCreate(28, month);
+				}
+			}
+
+			function checkThanCreate(value, month) {
+				//判断月份，大月31天，小月30天，2月视情况而定
+				if(month == 1 || month == 3 || month == 4 || month == 6 || month == 8 || month == 10 || month == 12) {
+					//调用生成option的函数
+					createOption(32);
+				} else if(month == 2) {
+					createOption(value);
+				} else {
+					createOption(31);
+				}
+			}
+
+			function createOption(end) {
+				//开始遍历
+				for(j = 1; j < end; j++) {
+					//获取select对象
+					var day = document.getElementById('seldd');
+					//新建option对象
+					var opt = document.createElement("option");
+					//给option对象赋值
+					if(j < 10) {
+						console.log(i);
+						opt.innerHTML = "0" + j;
+						opt.value = j;
+					} else {
+						opt.innerHTML = j;
+						opt.value = j;
+					}
+					//追加option到select对象下
+					day.appendChild(opt);
+				}
+			}
+
+			function clear() {
+				var day = document.getElementById("seldd");
+				var optarr = day.childNodes;
+				for(var i = optarr.length - 1; i >= 0; i--) {
+					day.removeChild(optarr[i]);
+				}
+			}
+		</script>
+	</body>
+
+</html>
