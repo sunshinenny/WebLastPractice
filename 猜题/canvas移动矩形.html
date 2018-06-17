@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>canvas</title>
+		<style>
+			body {
+				text-align: center;
+			}
+		</style>
+	</head>
+
+	<body>
+		<canvas id="move" width="600" height="600"></canvas>
+		<script>
+			var w = 600;
+			var h = 600;
+			var tempMove = document.getElementById('move');
+			var ctx = tempMove.getContext('2d');
+			var flagY = 0;
+			var flag = 1;
+			var color = "antiquewhite";
+			var timer = setInterval(function() {
+				var x = 30;
+				var y = 30;
+				ctx.clearRect(0, 0, w, h);
+				ctx.fillRect(0, flagY, x, y);
+				flagY += flag * 20;
+				if(flagY >= 600 || flagY <= 0) {
+					//碰到边缘后将方块反向
+					flag = -flag;
+				}
+			}, 50);
+		</script>
+	</body>
+
+</html>

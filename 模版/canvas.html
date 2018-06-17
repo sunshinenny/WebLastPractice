@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div {
+				text-align: center;
+			}
+			
+			canvas {
+				background-color: #7AB5D3;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div><canvas id="canvas" name="canvas" width="500" height="500"></canvas></div>
+		<script language="JavaScript">
+			var cav = document.getElementById("canvas").getContext('2d');
+			//绘制矩形
+			//			cav.fillRect(x,y,width,heigth);//填充矩形，从xy位置开始，长度为width，高度为height
+			//			cav.strokeRect(x,y,width,heigth);//描边矩形，从xy位置开始，长度为width，高度为height
+			//			cav.clearRect(x,y,width,heigth);//清除矩形画布，从xy位置开始，长度为width，高度为height
+			//定制颜色
+			//			cav.fillStyle="#000000";//指定填充颜色
+			//			cav.strokeStyle="#000000";//指定描边颜色
+
+			//			//绘制渐变
+			//			cav.createLinearGradient();//创建一个线性渐变对象
+			//			cav.createRadialGradient();//创建一个射线渐变对象
+			//			cav.addColorStop(position,color);//指定渐变颜色值
+
+			//文字
+			//			cav.font="bold 24px verdana,sans-serif";//设置字体
+			//			cav.textAlign="start";//设置相对文本位置
+			//			cav.textBaseline="bottom";//设置基线
+			//			cav.fillText("HelloWorld",100,124);//实心填充文字
+			//			var size=cav.measureText("HelloWorld");//返回文本信息
+
+			//绘制路径
+			//			cav.beginPath();//开始一个新的形状描述
+			//			cav.closePath();//关闭路径，如果没有回到出发点，系统会自动连接
+			//			//如果不需要回到出发点，则不需要调用这个方法
+			//			
+			//			cav.stroke();//绘制成轮廓形状——一般来说都使用这个
+			//			cav.fill();//绘制成实心形状，可以不用写close，此方法会自动实现封闭
+			//			
+			//			cav.moveTo(x,y);//将笔触移动到指定位置
+			//			cav.lineTo(x,y);//绘制直线，从moveto的位置开始到lineto
+			//			cav.rect(x,y,wigth,heigth);//生成一个矩形的路径
+			//			cav.arc(x,y,半径,开始位置,结束位置,顺时针或者逆时针);//生成弧线或者圆形
+			//开始和结束位置都是Math.PI的形式进行计算
+
+			//绘制线
+			//cav.lineWidth = 10; //指定线条粗细
+
+			//绘制图像
+			//			cav.drawImage(img,x,y);
+			/**
+			 * 开始举例,失败了 考试的时候再说
+			 */
+			//			var imageTest=new Image();
+			//			imageTest.src="img/343250.png";
+			//			img.onload=function(){
+			//				cav.drawImage(imageTest, 0, 0,30,30);
+			//			}
+
+			//计时器模版
+			//			var timer = setInterval(function() {
+			//
+			//			}, 50);
+		</script>
+	</body>
+
+</html>
