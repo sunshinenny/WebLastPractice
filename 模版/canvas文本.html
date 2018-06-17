@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div {
+				text-align: center;
+			}
+			
+			canvas {
+				background-color: #7AB5D3;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div><canvas id="canvas" name="canvas" width="500" height="500"></canvas></div>
+		<script language="JavaScript">
+			var cav = document.getElementById("canvas").getContext('2d');
+			//文字
+			//			cav.font="bold 24px verdana,sans-serif";//设置字体
+			//			cav.textAlign="start";//设置相对文本位置
+			//			文本参照X轴坐标如何进行水平对齐。
+			//			取值：start， end，left，right，center，默认值为start
+			//			textAlign 设置或返回文本内容的当前对齐方式
+			//start : 默认。文本在指定的位置开始。
+			//end : 文本在指定的位置结束。
+			//center: 文本的中心被放置在指定的位置。
+			//left : 文本左对齐。
+			//right : 文本右对齐。
+			//			cav.textBaseline="bottom";//设置基线-底部
+			//			文本参照Y轴坐标如何进行垂直对齐。
+			//			取值：top，middle，alphabetic，ideographic，bottom，默认值：alphabetic
+			//			alphabetic ： (默认)文本基线是普通的字母基线。
+			//top ： 文本基线是 em 方框的顶端。
+			//hanging ： 文本基线是悬挂基线。
+			//middle ： 文本基线是 em 方框的正中。
+			//ideographic： 文本基线是em基线。
+			//bottom ： 文本基线是 em 方框的底端。
+
+			//			cav.fillText("HelloWorld",100,124);//实心填充文字
+			//			var size=cav.measureText("HelloWorld");//返回文本信息
+			//表示在(x,y)的位置，绘制text的内容。可选参数maxWidth为文本的最大宽度，单位为像素。
+			//如果设置了该属性，当文本内容宽度超过该参数值，则会自动按比例缩小字体，使文本的内容全部可见；
+			//未超过时，则以实际宽度显示。
+			//如果未设置该属性，当文本内容宽度超过画布宽度时，超出的内容将被隐藏。
+			//			fillText(text, x, y, [maxWidth]);
+			//			strokeText(text, x, y, [maxWidth]);
+
+			/**
+			 * 以下为阴影示例
+			 */
+
+			cav.fillStyle = "red";
+			cav.font = "26px '微软雅黑'";
+			cav.textAlign = "left";
+			//shadowBlur:模式级数
+			cav.shadowBlur = 10;
+			//xy为偏移量
+			cav.shadowOffsetX = 5;
+			cav.shadowOffsetY = 5;
+			cav.shadowColor = "black";
+			//fillText("要添加的文字",x0坐标，y0坐标)
+			cav.strokeText("You jump! I jump!", 50, 100);
+			cav.fillText("You jump! I jump!", 50, 100);
+			cav.fillText("rose~jack", 50, 200);
+		</script>
+	</body>
+
+</html>

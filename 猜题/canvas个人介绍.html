@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div {
+				text-align: center;
+			}
+			
+			canvas {
+				background-color: #A6E1EC;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div><canvas id="canvas" name="canvas" width="500" height="240"></canvas></div>
+		<script language="JavaScript">
+			var cav = document.getElementById("canvas").getContext('2d');
+			//绘制图像
+			var flag = 60;
+			var imageTest = new Image();
+			imageTest.src = "img/tyh.png";
+			//等到图片加载完成之后再插入到canvas中
+			imageTest.onload = function() {
+				cav.drawImage(imageTest, 0, 0, flag * 3, flag * 4);
+			}
+
+			//文字
+			cav.font = "bold 24px verdana,sans-serif"; //设置字体
+			cav.textAlign = "start"; //设置相对文本位置
+			cav.textBaseline = "bottom"; //设置基线
+			cav.fillText("陶宇豪", 200, 40); //实心填充文字
+			cav.font = "bold 18px verdana,sans-serif"; //设置字体
+			cav.strokeText("2016405A621", 200, 70); //空心填充文字
+			cav.strokeText("B16532", 200, 100); //实心填充文字
+			cav.strokeText("软件工程", 200, 130); //实心填充文字
+			var size = cav.measureText("HelloWorld"); //返回文本信息
+		</script>
+	</body>
+
+</html>
