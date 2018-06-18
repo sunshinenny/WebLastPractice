@@ -187,18 +187,18 @@ function toggleAll(button) {
 		}
 	}
 }
-//
-//function toggleShop(this, num) {
-//	var tr = document.getElementsByTagName("tr");
-//	if(this.innerHTML == "v") {
-//		for(i = num; i < num + 2; i++) {
-//			tr[i].style.display = "none";
-//			document.getElementById(this.id).innerHTML = ">";
-//		}
-//	} else {
-//		for(i = num; i < num + 2; i++) {
-//			tr[i].style.display = "block";
-//			document.getElementById(this.id).innerHTML = "v";
-//		}
-//	}
-//}
+
+function toggleShop(button, num) {
+	var tr = document.getElementsByTagName("tr");
+	if(button.innerHTML == "v") {
+		for(i = num; i < num + 1; i++) {
+			tr[i].style.display = "none";
+			document.getElementById(button.id).innerHTML = ">";
+		}
+	} else {
+		for(i = num; i < num + 1; i++) {
+			tr[i].style.display = "block";
+			document.getElementById(button.id).innerHTML = "v";
+		}
+	}
+}
