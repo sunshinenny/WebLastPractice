@@ -69,15 +69,15 @@ window.onload = function createTable() {     //创建表格
 		        
 		var firstShopSelAll = document.querySelectorAll("tbody tr td:nth-child(2)");        
 		var addSelButton = "<input type=\"checkbox\"onclick=\"check(this)\" name=\"admin\">";
-		//		var toggleShop = "<button id=\"hideApple\" onclick=\"toggleShop(this,)\">v</button>";        
+		//		var toggleShop = "<button id=\"hideApple\" onclick=\"toggleShop(this,)\">V</button>";        
 		for(var i = 0; i < firstShopSelAll.length; i++) {            
 			if(i % 2 == 1 || i == firstShopSelAll.length - 1) continue;            
 			var value = firstShopSelAll[i].innerHTML;            
 			firstShopSelAll[i].innerHTML = addSelButton + value;        
 		}  
 		// 精准添加隐藏按钮      
-		firstShopSelAll[0].innerHTML = "<button id=\"hideApple\" onclick=\"toggleShop(this,2)\">v</button>" + firstShopSelAll[0].innerHTML;
-		firstShopSelAll[2].innerHTML = "<button id=\"hideMi\" onclick=\"toggleShop(this,4)\">v</button>" + firstShopSelAll[2].innerHTML;
+		firstShopSelAll[0].innerHTML = "<button id=\"hideApple\" onclick=\"toggleShop(this,2)\">V</button>" + firstShopSelAll[0].innerHTML;
+		firstShopSelAll[2].innerHTML = "<button id=\"hideMi\" onclick=\"toggleShop(this,4)\">V</button>" + firstShopSelAll[2].innerHTML;
 		//加入物品的选择按钮    
 		        
 		var thirdGoods = document.querySelectorAll("tbody tr td:nth-child(3)");        
