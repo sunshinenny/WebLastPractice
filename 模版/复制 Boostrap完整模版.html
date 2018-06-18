@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+	<head>
+		<meta charset="utf-8">
+
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+
+		<!-- 上述 3 个 meta 标签必须放在最前面 -->
+
+		<!-- 新 Bootstrap 核心 CSS 文件 -->
+
+		<link href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+		<!-- jQuery 文件。务必在 bootstrap.min.js 之前引入 -->
+
+		<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js">
+		</script>
+
+		<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+
+		<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js">
+		</script>
+	</head>
+
+	<body>
+		<h2>引导主体副本</h2>
+		<p class="lead">这是一个演示引导主体副本用法的实例。</p>
+		<hr />
+		<small>（设置文本为父文本大小的 85%）、 
+<strong>（设置文本为更粗的文本）、 
+<em>（设置文本为斜体）。
+	<small>本行内容是在标签内</small><br>
+		<strong>本行内容是在标签内</strong><br>
+		<em>本行内容是在标签内，并呈现为斜体</em><br>
+		<p class="text-left">向左对齐文本</p>
+		<p class="text-center">居中对齐文本</p>
+		<p class="text-right">向右对齐文本</p>
+		<hr />
+		<p class="text-muted">本行内容是减弱的</p>
+		<p class="text-primary">本行内容带有一个 primary class</p>
+		<p class="text-success">本行内容带有一个 success class</p>
+		<p class="text-info">本行内容带有一个 info class</p>
+		<p class="text-warning">本行内容带有一个 warning class</p>
+		<p class="text-danger">本行内容带有一个 danger class</p>
+		<hr />
+		<abbr title="World Wide Web">WWW</abbr><br>
+		<abbr title="Real Simple Syndication" class="initialism">RSS</abbr>
+
+		<hr />
+		<address>
+  <strong>Some Company, Inc.</strong><br>
+  007 street<br>
+  Some City, State XXXXX<br>
+  <abbr title="Phone">P:</abbr> (123) 456-7890
+</address>
+		<address>
+  <strong>Full Name</strong><br>
+  <a href="mailto:#">mailto@somedomain.com</a>
+</address>
+		<hr />
+		<blockquote>
+			<p>
+				这是一个默认的引用实例。
+			</p>
+		</blockquote>
+		<blockquote>
+			这是一个带有源标题的引用。
+			<small>Someone famous in <cite title="Source Title">Source Title</cite></small>
+		</blockquote>
+		<blockquote class="pull-right">
+			这是一个向右对齐的引用。
+			<small>Someone famous in <cite title="Source Title">Source Title</cite></small>
+		</blockquote>
+		<hr />
+		<h4>有序列表</h4>
+		<ol>
+			<li>Item 1</li>
+			<li>Item 2</li>
+			<li>Item 3</li>
+			<li>Item 4</li>
+		</ol>
+		<h4>无序列表</h4>
+		<ul>
+			<li>Item 1</li>
+			<li>Item 2</li>
+			<li>Item 3</li>
+			<li>Item 4</li>
+		</ul>
+		<h4>未定义样式列表</h4>
+		<ul class="list-unstyled">
+			<li>Item 1</li>
+			<li>Item 2</li>
+			<li>Item 3</li>
+			<li>Item 4</li>
+		</ul>
+		<h4>内联列表</h4>
+		<ul class="list-inline">
+			<li>Item 1</li>
+			<li>Item 2</li>
+			<li>Item 3</li>
+			<li>Item 4</li>
+		</ul>
+		<h4>定义列表</h4>
+		<dl>
+			<dt>Description 1</dt>
+			<dd>Item 1</dd>
+			<dt>Description 2</dt>
+			<dd>Item 2</dd>
+		</dl>
+		<h4>水平的定义列表</h4>
+		<dl class="dl-horizontal">
+			<dt>Description 1</dt>
+			<dd>Item 1</dd>
+			<dt>Description 2</dt>
+			<dd>Item 2</dd>
+		</dl>
+		<hr />
+		<p><code>&lt;header&gt;</code> 作为内联元素被包围。</p>
+		<p>如果需要把代码显示为一个独立的块元素，请使用 &lt;pre&gt; 标签：</p>
+		<pre>
+    &lt;article&gt;
+        &lt;h1&gt;Article Heading&lt;/h1&gt;
+    &lt;/article&gt;
+</pre>
+		<hr />
+		<table class="table table-striped table-bordered table-hover table-condensed">
+			<caption>联合使用所有表格类:</caption>
+			<thead>
+				<tr>
+					<th>#</th>
+					<th>Firstname</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>1</td>
+					<td>Anna</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>Debbie</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>John</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+		<div class="table-responsive">
+			<table class="table">
+				<caption>响应式表格布局</caption>
+				<thead>
+					<tr>
+						<th>产品</th>
+						<th>付款日期</th>
+						<th>状态</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>产品1</td>
+						<td>23/11/2013</td>
+						<td>待发货</td>
+					</tr>
+					<tr>
+						<td>产品2</td>
+						<td>10/11/2013</td>
+						<td>发货中</td>
+					</tr>
+					<tr>
+						<td>产品3</td>
+						<td>20/10/2013</td>
+						<td>待确认</td>
+					</tr>
+					<tr>
+						<td>产品4</td>
+						<td>20/10/2013</td>
+						<td>已退货</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<hr />
+		<form role="form">
+			<div class="form-group">
+				<label for="name">名称</label>
+				<input type="text" class="form-control" id="name" placeholder="请输入名称">
+			</div>
+			<div class="form-group">
+				<label for="inputfile">文件输入</label>
+				<input type="file" id="inputfile">
+				<p class="help-block">这里是块级帮助文本的实例。</p>
+			</div>
+			<div class="checkbox">
+				<label>
+      <input type="checkbox">请打勾
+    </label>
+			</div>
+			<button type="submit" class="btn btn-default">提交</button>
+		</form>
+		<hr />
+		<form class="form-inline" role="form">
+			<div class="form-group">
+				<label class="sr-only" for="name">名称</label>
+				<input type="text" class="form-control" id="name" placeholder="请输入名称">
+			</div>
+			<div class="form-group">
+				<label class="sr-only" for="inputfile">文件输入</label>
+				<input type="file" id="inputfile">
+			</div>
+			<div class="checkbox">
+				<label>
+      <input type="checkbox">请打勾
+    </label>
+			</div>
+			<button type="submit" class="btn btn-default">提交</button>
+		</form>
+		<hr />
+		<form class="form-horizontal" role="form">
+			<div class="form-group">
+				<label for="firstname" class="col-sm-2 control-label">名字</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" id="firstname" placeholder="请输入名字">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="lastname" class="col-sm-2 control-label">姓</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" id="lastname" placeholder="请输入姓">
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<div class="checkbox">
+						<label>
+          <input type="checkbox">请记住我
+        </label>
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<button type="submit" class="btn btn-default">登录</button>
+				</div>
+			</div>
+		</form>
+		<hr />
+		<form role="form">
+			<div class="form-group">
+				<label for="name">标签</label>
+				<input type="text" class="form-control" placeholder="文本输入">
+			</div>
+		</form>
+		<hr />
+		<form role="form">
+			<div class="form-group">
+				<label for="name">文本框</label>
+				<textarea class="form-control" rows="3"></textarea>
+			</div>
+		</form>
+		<hr />
+		<label for="name">默认的复选框和单选按钮的实例</label>
+		<div class="checkbox">
+			<label>
+    <input type="checkbox" value="">选项 1
+  </label>
+		</div>
+		<div class="checkbox">
+			<label>
+    <input type="checkbox" value="">选项 2
+  </label>
+		</div>
+		<div class="radio">
+			<label>
+    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>选项 1
+  </label>
+		</div>
+		<div class="radio">
+			<label>
+    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">选项 2 - 选择它将会取消选择选项 1
+  </label>
+		</div>
+		<label for="name">内联的复选框和单选按钮的实例</label>
+		<div>
+			<label class="checkbox-inline">
+    <input type="checkbox" id="inlineCheckbox1" value="option1">选项 1
+  </label>
+			<label class="checkbox-inline">
+    <input type="checkbox" id="inlineCheckbox2" value="option2">选项 2
+  </label>
+			<label class="checkbox-inline">
+    <input type="checkbox" id="inlineCheckbox3" value="option3">选项 3
+  </label>
+			<label class="checkbox-inline">
+    <input type="radio" name="optionsRadiosinline" id="optionsRadios3" value="option1" checked>选项 1
+  </label>
+			<label class="checkbox-inline">
+    <input type="radio" name="optionsRadiosinline" id="optionsRadios4" value="option2">选项 2
+  </label>
+		</div>
+		<hr />
+		<form role="form">
+			<div class="form-group">
+				<label for="name">选择列表</label>
+				<select class="form-control">
+					<option>1</option>
+					<option>2</option>
+					<option>3</option>
+					<option>4</option>
+					<option>5</option>
+				</select>
+				<label for="name">可多选的选择列表</label>
+				<select multiple class="form-control">
+					<option>1</option>
+					<option>2</option>
+					<option>3</option>
+					<option>4</option>
+					<option>5</option>
+				</select>
+			</div>
+		</form>
+		<hr />
+		<form class="form-horizontal" role="form">
+			<div class="form-group">
+				<label class="col-sm-2 control-label">Email</label>
+				<div class="col-sm-10">
+					<p class="form-control-static">email@example.com</p>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="inputPassword" class="col-sm-2 control-label">密码</label>
+				<div class="col-sm-10">
+					<input type="password" class="form-control" id="inputPassword" placeholder="请输入密码">
+				</div>
+			</div>
+		</form>
+		<hr />
+		<form class="form-horizontal" role="form">
+			<div class="form-group">
+				<label class="col-sm-2 control-label">聚焦</label>
+				<div class="col-sm-10">
+					<input class="form-control" id="focusedInput" type="text" value="该输入框获得焦点...">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="inputPassword" class="col-sm-2 control-label">禁用</label>
+				<div class="col-sm-10">
+					<input class="form-control" id="disabledInput" type="text" placeholder="该输入框禁止输入..." disabled>
+				</div>
+			</div>
+			<fieldset disabled>
+				<div class="form-group">
+					<label for="disabledTextInput" class="col-sm-2 control-label">禁用输入（Fieldset disabled）</label>
+					<div class="col-sm-10">
+						<input type="text" id="disabledTextInput" class="form-control" placeholder="禁止输入">
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="disabledSelect" class="col-sm-2 control-label">禁用选择菜单（Fieldset disabled）</label>
+					<div class="col-sm-10">
+						<select id="disabledSelect" class="form-control">
+							<option>禁止选择</option>
+						</select>
+					</div>
+				</div>
+			</fieldset>
+			<div class="form-group has-success">
+				<label class="col-sm-2 control-label" for="inputSuccess">输入成功</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" id="inputSuccess">
+				</div>
+			</div>
+			<div class="form-group has-warning">
+				<label class="col-sm-2 control-label" for="inputWarning">输入警告</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" id="inputWarning">
+				</div>
+			</div>
+			<div class="form-group has-error">
+				<label class="col-sm-2 control-label" for="inputError">输入错误</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" id="inputError">
+				</div>
+			</div>
+		</form>
+		<hr />
+		<form role="form">
+			<div class="form-group">
+				<input class="form-control input-lg" type="text" placeholder=".input-lg">
+			</div>
+			<div class="form-group">
+				<input class="form-control" type="text" placeholder="默认输入">
+			</div>
+			<div class="form-group">
+				<input class="form-control input-sm" type="text" placeholder=".input-sm">
+			</div>
+			<div class="form-group"></div>
+			<div class="form-group">
+				<select class="form-control input-lg">
+					<option value="">.input-lg</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<select class="form-control">
+					<option value="">默认选择</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<select class="form-control input-sm">
+					<option value="">.input-sm</option>
+				</select>
+			</div>
+			<div class="row">
+				<div class="col-lg-2">
+					<input type="text" class="form-control" placeholder=".col-lg-2">
+				</div>
+				<div class="col-lg-3">
+					<input type="text" class="form-control" placeholder=".col-lg-3">
+				</div>
+				<div class="col-lg-4">
+					<input type="text" class="form-control" placeholder=".col-lg-4">
+				</div>
+			</div>
+		</form>
+		<hr />
+		<form role="form">
+			<span>帮助文本实例</span>
+			<input class="form-control" type="text" placeholder="">
+			<span class="help-block">一个较长的帮助文本块，超过一行，
+  需要扩展到下一行。本实例中的帮助文本总共有两行。</span>
+		</form>
+
+	</body>
+
+</html>

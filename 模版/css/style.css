@@ -1,0 +1,57 @@
+body{font-family:  微软雅黑,Arial,sans-serif;}
+ul{list-style:none;padding:0;margin:0;}
+
+p{line-height:28px;margin:0;}
+footer{text-align:center;padding:20px;margin-top:30px;border-top:1px solid #e5e5e5;}
+.container{padding:0;}
+
+.navbar{height:64px;background:#a64423;}
+.navbar .logo a{background:url(../img/logo-jquery-ui.png) center no-repeat;text-indent:-9999px;margin:12px 0;float:left;width:180px;height:40px;display:block;}
+.navbar ul{float:left;margin-left:20px;padding:0;list-style:none;}
+.navbar ul li{line-height:64px;float:left;padding:0 15px;}
+.navbar ul li a{color:#fff;text-decoration:none;}
+.navbar ul li ul li a{color:#333;}
+.navbar-default{border-bottom:1px solid #ccc;}
+.banner{margin:50px 0 0;border-bottom:1px solid #a64423;padding:20px 0;}
+.banner h1{color:#333;}
+.banner a:hover{color:#B24926;background:#eee;}
+.banner p{color:#333;font-size:18px;margin:10px auto;text-align:center;}
+.banner .btn{color: #fff;
+border-color: #ccc;
+padding: 15px 30px;
+font-size: 20px;}
+.demo{background:#eee;padding:10px;}
+.demo ul li{width:190px;line-height:30px;float:left;}
+pre ol{padding:0;}
+.left{background:#f5f5f5;border:1px solid #eee;padding:0;width:300px;}
+.left .item{margin:10px 0;padding-left:20px;line-height:40px;border-bottom:1px solid #eee;}
+.left ul{list-style:none;padding:10px 20px;}
+.left ul li{line-height:30px;}
+.left ul li a{color:#666;text-decoration:none;}
+.run{margin:20px 0;}
+
+
+.clear{clear:both;}
+.demo-item{margin:10px 0;line-height:40px;}
+.run-right{background:#eee;}
+.run-right ul li{line-height:30px;}
+
+#main{padding-left:40px;}
+#main p{line-height:30px;margin:10px 0;}
+#main ul li{line-height:30px;}
+#main .item{margin:10px 0;}
+#main .page-header{margin-top:0;}
+
+#ad{margin-top:5px;}
+
+.fixed{position:fixed;top:69px;}
+
+.bg{background:url(../img/dark-grey-tile.png) ;padding:20px;}
+.bg{color:#ccc;}
+.ui{width:140px;height:140px;margin:120px auto 0;color:#a64423;font-size:108px;border:1px solid #a64423;text-align:center;line-height:140px;border-radius:15%;
+}
+.demo-btn{text-align:center;}
+.demo-btn a{background:#a64423;width:220px;line-height:58px;color:#fff;font-size:20px;text-decoration:none;display:block;border:1px solid #a64423;margin:0 auto;}
+.demo-btn a:hover{background:#fff;color:#a64423;}
+.description{font-size:38px;margin:40px;text-align:center;font-weight:300;color:#666;}
+

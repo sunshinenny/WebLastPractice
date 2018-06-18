@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div {
+				text-align: center;
+			}
+			
+			canvas {
+				/*background-color: #7AB5D3;*/
+			}
+		</style>
+	</head>
+
+	<body>
+		<div><canvas id="canvas" name="canvas" width="500" height="500"></canvas></div>
+		<script language="JavaScript">
+			var cav = document.getElementById("canvas").getContext('2d');
+			//计时器模版
+			var begin = 0;
+			var end = 0;
+			var flag = 0;
+
+			var timer = setInterval(function() {
+				cav.clearRect(0, 0, 500, 500)
+				cav.moveTo(0, 250);
+				cav.lineTo(500, 250);
+				cav.stroke();
+				cav.lineWidth = 10;
+
+				//开始绘制矩形
+				cav.fillRect(begin, 225, 50, 50);
+				var r = (begin / 2.5).toString(16);
+				var g = (begin / 2.5).toString(16);
+				var b = (begin / 2.5).toString(16);
+				cav.fillStyle = "#" + r + g + b;
+				begin += 5;
+				if(begin == 500) begin = 0;
+			}, 50);
+		</script>
+	</body>
+
+</html>

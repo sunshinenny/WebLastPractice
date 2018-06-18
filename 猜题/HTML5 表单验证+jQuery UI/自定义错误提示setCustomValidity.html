@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+  <h3>自定义错误提示消息</h3>
+
+
+  <form action="7.php">
+    用户名：<input autofocus  required minlength="6" maxlength="9" type="text" name="uname" id="uname"/><br>
+    邮箱名：<input type="email" name="email" id="email"/><br>
+    年龄值：<input type="number" min="18" max="60" step="2" name="age" id="age"/><br>
+
+    <input type="submit"/>
+  </form>
+  <script>
+    uname.onblur = function(){
+      //设置一个自定义的验证有效性消息
+      //this.setCustomValidity('ABCD');
+      console.log(this.validity);
+      if(this.validity.valueMissing){ //required
+        this.setCustomValidity('用户名不能为空');
+      }else if(this.validity.tooShort){ //minlength
+        this.setCustomValidity('用户名长度太短了');
+      }else if(this.validity.tooLong){ //maxlength
+        this.setCustomValidity('用户名太长了');
+      }else {
+        //清除自定义错误消息
+        this.setCustomValidity('');
+      }
+    }
+
+    email.onblur = function(){
+      console.log(this.validity);
+      if(this.validity.typeMismatch){
+        alert('邮箱格式非法');
+      }else if(this.validity.valid){
+        console.log('邮箱格式合法')
+      }
+    }
+
+    age.onblur = function(){
+      console.log(this.validity);
+      if(this.validity.rangeOverflow){
+        alert('年龄太大了')
+      }else if(this.validity.rangeUnderflow){
+        alert('年龄太小了')
+      }else if(this.validity.stepMismatch){
+        alert('数字步长不匹配')
+      }else if(this.validity.valid){
+        console.log('年龄输入有效了')
+      }
+    }
+  </script>
+
+</body>
+</html>
