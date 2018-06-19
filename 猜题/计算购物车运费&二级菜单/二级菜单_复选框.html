@@ -1,0 +1,181 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<title>1. 实现伸缩二级菜单(能同时显示多个二级菜单)</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="css/1.css" />
+<script type="text/javascript" src="js/1.js" ></script>
+
+<style>
+	table{width:600px; text-align:center;
+		border-collapse:collapse;
+	}
+	td,th{border:0px solid black}
+	td[colspan="3"]{text-align:right;}
+	#data tbody td:last-child{background:red;}
+	#data tfoot>tr>td:last-child{background:green;}
+</style>
+<script type="text/javascript" src="js/综合1.js" ></script>
+
+</head>
+<body>
+	<div id="id1" class="open" onclick="toggle(this)">全部</div>
+	<ul class="tree">
+		<li>
+			<span class="open" onclick="toggle(this)">店铺1</span>
+			 <ul class="hide">
+				<table id="t1">
+		<thead>
+			<tr>
+				<th><input type="checkbox" name="adminID_1" onclick="selectAll_1(this)" />全选</th>
+				<th>商品名称</th>
+				<th>单价</th>
+				<th>数量</th>
+				<th>小计</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+			    <td><input type="checkbox" name="adminID_1" onclick="checkSel_1()" /></td>
+				<td>iPhone6</td>
+				<td>&yen;4000</td>
+				<td>
+					<button onclick="calc(this)">-</button>
+					<span>1</span>
+					<button onclick="calc(this)">+</button>
+				</td>
+				<td>&yen;4000</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" name="adminID_1" onclick="checkSel_1()" /></td>
+				<td>iPhone6 plus</td>
+				<td>&yen;5000</td>
+				<td>
+				<button onclick="calc(this)">-</button>
+				<span>1</span>
+				<button onclick="calc(this)">+</button>
+				</td>
+				<td>&yen;5000</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" name="adminID_1" onclick="checkSel_1()" /></td>
+				<td>iPad Air 2</td>
+				<td>&yen;6000</td>
+				<td>
+					 <button onclick="calc(this)">-</button>
+					<span>1</span>
+					<button onclick="calc(this)">+</button>
+				</td>
+				<td>&yen;6000</td>
+			</tr>
+		</tbody>
+		
+	</table>
+			</ul>
+		</li>
+		<li><span class="closed" onclick="toggle(this)">店铺2</span>
+			<ul class="hide">
+				<table id="t2">
+		<thead>
+			<tr>
+				<th><input type="checkbox" name="adminID_2" onclick="selectAll_2(this)" />全选</th>
+				<th>商品名称</th>
+				<th>单价</th>
+				<th>数量</th>
+				<th>小计</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+			    <td><input type="checkbox" name="adminID_2" onclick="checkSel_2()" /></td>
+				<td>iPhone6</td>
+				<td>&yen;4000</td>
+				<td>
+					<button onclick="calc(this)">-</button>
+					<span>1</span>
+					<button onclick="calc(this)">+</button>
+				</td>
+				<td>&yen;4000</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" name="adminID_2" onclick="checkSel_2()" /></td>
+				<td>iPhone6 plus</td>
+				<td>&yen;5000</td>
+				<td>
+				<button onclick="calc(this)">-</button>
+				<span>1</span>
+				<button onclick="calc(this)">+</button>
+				</td>
+				<td>&yen;5000</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" name="adminID_2" onclick="checkSel_2()" /></td>
+				<td>iPad Air 2</td>
+				<td>&yen;6000</td>
+				<td>
+					 <button onclick="calc(this)">-</button>
+					<span>1</span>
+					<button onclick="calc(this)">+</button>
+				</td>
+				<td>&yen;6000</td>
+			</tr>
+		</tbody>
+		
+	</table>
+			</ul>
+		</li>
+		<li><span class="closed" onclick="toggle(this)">店铺3</span>
+			<ul class="hide">
+				<table id="t3">
+		<thead>
+			<tr>
+				<th><input type="checkbox" name="adminID_3" onclick="selectAll_3(this)" />全选</th>
+				<th>商品名称</th>
+				<th>单价</th>
+				<th>数量</th>
+				<th>小计</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+			    <td><input type="checkbox" name="adminID_3" onclick="checkSel_3()" /></td>
+				<td>iPhone6</td>
+				<td>&yen;4000</td>
+				<td>
+					<button onclick="calc(this)">-</button>
+					<span>1</span>
+					<button onclick="calc(this)">+</button>
+				</td>
+				<td>&yen;4000</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" name="adminID_3" onclick="checkSel_3()" /></td>
+				<td>iPhone6 plus</td>
+				<td>&yen;5000</td>
+				<td>
+				<button onclick="calc(this)">-</button>
+				<span>1</span>
+				<button onclick="calc(this)">+</button>
+				</td>
+				<td>&yen;5000</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" name="adminID_3" onclick="checkSel_3()" /></td>
+				<td>iPad Air 2</td>
+				<td>&yen;6000</td>
+				<td>
+					 <button onclick="calc(this)">-</button>
+					<span>1</span>
+					<button onclick="calc(this)">+</button>
+				</td>
+				<td>&yen;6000</td>
+			</tr>
+		</tbody>
+		
+	</table>
+			</ul>
+		</li>
+	</ul>
+	
+</body>
+</html>

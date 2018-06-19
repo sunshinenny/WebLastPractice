@@ -1,0 +1,68 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<title>使用Selector API实现购物车客户端计算</title>
+<meta charset="utf-8" />
+<style>
+	table{width:600px; text-align:center;
+		border-collapse:collapse;
+	}
+	td,th{border:1px solid black}
+	td[colspan="3"]{text-align:right;}
+	#data tbody td:last-child{background:red;}
+	#data tfoot>tr>td:last-child{background:green;}
+</style>
+<script type="text/javascript" src="js/2.js" ></script>
+</head>
+<body>
+	<table id="data">
+		<thead>
+			<tr>
+				<th>商品名称</th>
+				<th>单价</th>
+				<th>数量</th>
+				<th>小计</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>iPhone6</td>
+				<td>&yen;10</td>
+				<td>
+					<button onclick="calc(this)">-</button>
+					<span>1</span>
+					<button onclick="calc(this)">+</button>
+				</td>
+				<td>&yen;10</td>
+			</tr>
+			<tr>
+				<td>iPhone6 plus</td>
+				<td>&yen;20</td>
+				<td>
+				<button onclick="calc(this)">-</button>
+				<span>1</span>
+				<button onclick="calc(this)">+</button>
+				</td>
+				<td>&yen;20</td>
+			</tr>
+			<tr>
+				<td>iPad Air 2</td>
+				<td>&yen;30</td>
+				<td>
+					 <button onclick="calc(this)">-</button>
+					<span>1</span>
+					<button onclick="calc(this)">+</button>
+				</td>
+				<td>&yen;30</td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<td colspan="3">Total(含10元运费,满100包邮): </td>
+				<td>&yen;70</td>
+			</tr>
+		</tfoot>
+	</table>
+	
+</body>
+</html>
