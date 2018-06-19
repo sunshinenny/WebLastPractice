@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<title></title>
+
+		<link rel="stylesheet" type="text/css" href="css/jquery-ui.theme.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css" />
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<script src="js/jquery.js"></script>
+		<script src="js/jquery-ui.min.js"></script>
+		<script src="js/bootstrap.js"></script>
+		<script>
+			$(function() {
+				var availableTags = [
+					"web开发基础",
+					"web前端开发技术",
+					"java web 案例",
+					"Java web"
+				];
+				$("#tags").autocomplete({
+					source: availableTags
+				});
+			});
+		</script>
+		<script>
+			$(function() {
+				$("#sortable").sortable();
+				$("#sortable").disableSelection();
+			});
+		</script>
+	</head>
+
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+					<div class="ui-widget">
+						<label for="tags">选择课程：</label>
+						<input id="tags">
+					</div>
+
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+					<div id="draggableTable">
+						<ul id="sortable">
+							<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>内容2</li>
+							<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>内容1</li>
+							<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>内容3</li>
+							<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>内容4</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>

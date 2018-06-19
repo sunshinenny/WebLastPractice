@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div {
+				text-align: center;
+			}
+			
+			canvas {
+				border: 1px solid black;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div><canvas id="canvas" name="canvas" width="500" height="240"></canvas></div>
+		<script language="JavaScript">
+			var cav = document.getElementById("canvas").getContext('2d');
+			var begin = 0;
+			//绘制图像
+			var flag = 1;
+			var imageTest = new Image();
+			imageTest.src = "img/tyh.png";
+			//等到图片加载完成之后再插入到canvas中
+			imageTest.onload = function() {
+				cav.drawImage(imageTest, 0, 0, 180, 240);
+			}
+			var timer = setInterval(function() {
+				cav.clearRect(180, 0, 500, 240);
+
+				//文字
+				cav.font = "bold 24px verdana,sans-serif"; //设置字体
+				cav.textAlign = "start"; //设置相对文本位置
+				cav.textBaseline = "bottom"; //设置基线
+				cav.fillText("数据加载中......", 200, 40); //实心填充文字
+
+				//								cav.clearRect(0, 0, 500, 500);
+				//绘制内圈
+				cav.beginPath();
+				cav.arc(300, 140, begin, 0, Math.PI * 2);
+				cav.strokeStyle = "black";
+				cav.stroke();
+				cav.closePath();
+				begin += flag;
+				if(begin >= 75) {
+					flag = -flag;
+				} else if(begin <= 0) {
+					flag = -flag;
+				}
+			}, 30);
+		</script>
+	</body>
+
+</html>

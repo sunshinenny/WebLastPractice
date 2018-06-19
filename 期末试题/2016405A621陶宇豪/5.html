@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>5</title>
+
+		<link rel="stylesheet" type="text/css" href="css/jquery-ui.theme.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css" />
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<script src="js/jquery-3.2.1.min.js"></script>
+		<script src="js/jquery-ui.min.js"></script>
+		<script src="js/bootstrap.js"></script>
+		<style>
+			div {
+				border: 1px solid black;
+			}
+		</style>
+
+		<script>
+			$(function() {
+				var availableTags = [
+					"web开发基础",
+					"web前端开发技术",
+					"java web 案例",
+					"Java web"
+				];
+				$("#tags").autocomplete({
+					source: availableTags
+				});
+			});
+		</script>
+		<script>
+			$(function() {
+				$("#sortable").sortable();
+				$("#sortable").disableSelection();
+			});
+		</script>
+	</head>
+
+	<body>
+		<nav class="navbar navbar-default navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+				</div>
+				<div id="navbar" class="navbar-collapse collapse">
+					<ul class="nav navbar-nav">
+						<li class="active">
+							<a href="1.html">第1题</a>
+						</li>
+						<li>
+							<a href="2.html">第2题</a>
+						</li>
+						<li>
+							<a href="3.html">第3题</a>
+						</li>
+						<li>
+							<a href="4.html">第4题</a>
+						</li>
+						<li>
+							<a href="5.html">第5题</a>
+						</li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li>
+							<a href="javascript:window.opener=null;window.open('','_self');window.close();">交卷</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<br /><br /><br />
+		<div class="container-fluid">
+			<div class="row">
+				<div class="row">
+					<div class="col-md-4 col-sm-12 col-xs-12">
+						<div class="col-md-12 col-sm-6 col-xs-12">
+							<div class="ui-widget">
+								<label for="tags">选择课程：</label>
+								<input id="tags">
+							</div>
+						</div>
+						<div class="col-md-12 col-sm-6 col-xs-12">
+							<ul id="sortable">
+								<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>内容2</li>
+								<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>内容1</li>
+								<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>内容3</li>
+								<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>内容4</li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-md-8 col-sm-12 col-xs-12">
+						<div><canvas id="canvas" name="canvas" width="500" height="240"></canvas></div>
+						<script language="JavaScript">
+							var cav = document.getElementById("canvas").getContext('2d');
+							var begin = 0;
+							//绘制图像
+							var flag = 1;
+							var imageTest = new Image();
+							imageTest.src = "img/tyh.png";
+							//等到图片加载完成之后再插入到canvas中
+							imageTest.onload = function() {
+								cav.drawImage(imageTest, 0, 0, 180, 240);
+							}
+							var timer = setInterval(function() {
+								cav.clearRect(180, 0, 500, 240);
+
+								//文字
+								cav.font = "bold 24px verdana,sans-serif"; //设置字体
+								cav.textAlign = "start"; //设置相对文本位置
+								cav.textBaseline = "bottom"; //设置基线
+								cav.fillText("数据加载中......", 200, 40); //实心填充文字
+
+								//								cav.clearRect(0, 0, 500, 500);
+								//绘制内圈
+								cav.beginPath();
+								cav.arc(300, 140, begin, 0, Math.PI * 2);
+								cav.strokeStyle = "black";
+								cav.stroke();
+								cav.closePath();
+								begin += flag;
+								if(begin >= 75) {
+									flag = -flag;
+								} else if(begin <= 0) {
+									flag = -flag;
+								}
+							}, 30);
+						</script>
+					</div>
+
+					<div class="col-md-12 col-sm-12">
+						<div class="col-md-3 col-sm-6 col-xs-12">版权信息</div>
+						<div class="col-md-3 col-sm-6 col-xs-12">联系方式</div>
+						<div class="col-md-3 col-sm-6 col-xs-12">合作伙伴</div>
+						<div class="col-md-3 col-sm-6 col-xs-12">公司地址</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+	</body>
+
+</html>
